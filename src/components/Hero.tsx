@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, User } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
@@ -23,9 +24,11 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center">
-            <User className="w-16 h-16 md:w-20 md:h-20 text-primary/40" />
-          </div>
+          <img 
+            src={profilePhoto} 
+            alt="Dror Ben-Eliyahu"
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full object-cover border-2 border-primary/20 shadow-lg"
+          />
         </motion.div>
 
         <motion.div
