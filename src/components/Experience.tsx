@@ -11,6 +11,33 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    company: "Nuvei",
+    location: "Israel",
+    description: "Global payment technology company powering digital commerce",
+    role: "Director, Solutions & Implementation – Core Payments + Crypto",
+    period: "2024 - Present",
+    highlights: [
+      "Own solutioning and delivery for strategic merchants across core payments and crypto verticals",
+      "Design integration architectures covering checkout, tokenization, 3DS, smart routing, and multi-acquirer setups",
+      "Run cross-functional programs bridging Product, Engineering, Risk, and Commercial teams",
+      "Create reusable solution assets: playbooks, reference architectures, and training materials",
+      "Drive internal AI and automation initiatives to scale team capacity and knowledge management"
+    ]
+  },
+  {
+    company: "Simplex (acquired by Nuvei)",
+    location: "Israel",
+    description: "Fiat-to-crypto payment infrastructure for exchanges and wallets",
+    role: "Head of Sales Operations",
+    period: "Nov 2021 - 2024",
+    highlights: [
+      "Built the post-merger operating cadence between Simplex and Nuvei go-to-market teams",
+      "Owned forecasting, KPI dashboards, CRM governance, and territory/coverage planning",
+      "Aligned deal-execution workflows across Sales, Legal, Compliance, and Integration",
+      "Operationalized handoffs from Sales to Implementation, reducing onboarding friction"
+    ]
+  },
+  {
     company: "DAO4Peace",
     location: "Israel",
     description: "A decentralized & autonomous global foundation leveraging open finance",
@@ -86,7 +113,7 @@ const experiences: ExperienceItem[] = [
 
 const Experience = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary/30">
+    <section id="experience" className="py-24 md:py-32 bg-secondary/30">
       <div className="section-container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -101,7 +128,7 @@ const Experience = () => {
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
-              key={exp.company}
+              key={`${exp.company}-${exp.role}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}

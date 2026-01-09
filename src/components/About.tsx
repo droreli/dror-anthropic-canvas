@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="py-24 md:py-32">
+    <section id="about" className="py-24 md:py-32">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -14,11 +14,15 @@ const About = () => {
             About
           </h2>
           <p className="text-2xl md:text-3xl lg:text-4xl font-serif leading-relaxed text-foreground/90">
-            An accomplished product development and business development manager with{" "}
-            <span className="text-gradient font-semibold">international experience in five countries</span>.
-            Launched successful products in both low and high-tech ecosystems. Achieving results by
-            instilling a sense of ownership among team members, friendly communication between interfaces,
-            and connecting individual actions to the greater company goals.
+            Fintech operator and solutions leader spanning{" "}
+            <span className="text-gradient font-semibold">product, go-to-market, RevOps, and complex B2B integrations</span>{" "}
+            across payments and crypto. Progressed from Head of Sales Operations at Simplex (post-acquisition by Nuvei) 
+            to owning end-to-end solutions and implementation for Nuvei's core business.
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground mt-6 leading-relaxed">
+            Strong at turning ambiguity into operating rhythms, cross-functional alignment, 
+            and merchant-ready assets. International experience across five countries with a track record 
+            of launching successful products in both low and high-tech ecosystems.
           </p>
         </motion.div>
       </div>
