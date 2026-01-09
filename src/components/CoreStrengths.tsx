@@ -12,32 +12,32 @@ const strengths = [
   {
     icon: CreditCard,
     title: "Payments Integration Leadership",
-    description: "Checkout flows, tokenization, 3DS, smart routing, and multi-acquirer orchestration"
+    description: "Checkout, tokenization, 3DS, routing, refunds/voids, settlement, and reconciliation"
   },
   {
     icon: Shield,
     title: "Crypto Rails",
-    description: "On-ramp/off-ramp, KYC/AML orchestration, and partner coordination across exchanges"
+    description: "On-ramp/off-ramp flows, stablecoins, KYC/AML alignment, partner coordination, operational readiness"
   },
   {
-    icon: TrendingUp,
-    title: "RevOps & Sales Operations",
-    description: "Forecasting, KPI frameworks, CRM governance, and pipeline optimization"
+    icon: Bot,
+    title: "AI & Knowledge Systems",
+    description: "MCP/RAG search, documentation hygiene loops, integration tooling and automation"
   },
   {
     icon: Workflow,
     title: "Program Delivery",
-    description: "Cross-functional alignment, milestone tracking, and stakeholder management"
+    description: "Stakeholder mapping, RACI, risk management, release readiness, incident triage & postmortems"
+  },
+  {
+    icon: TrendingUp,
+    title: "RevOps & Sales Operations",
+    description: "Forecasting, pipeline governance, coverage planning, enablement, deal execution support"
   },
   {
     icon: Layers,
     title: "Solution Architecture",
     description: "Technical solutioning, integration design, and merchant-ready documentation"
-  },
-  {
-    icon: Bot,
-    title: "AI & Knowledge Systems",
-    description: "Internal AI initiatives, automation workflows, and knowledge management"
   }
 ];
 
