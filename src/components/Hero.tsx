@@ -28,6 +28,7 @@ const Hero = () => {
             src={profilePhoto} 
             alt="Dror Ben-Eliyahu"
             className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full object-cover border-2 border-primary/20 shadow-lg"
+            style={{ objectPosition: 'center 20%' }}
           />
         </motion.div>
 
