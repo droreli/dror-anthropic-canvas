@@ -5,22 +5,22 @@ const educations = [
   {
     school: "INSEAD",
     location: "Fontainebleau, France",
-    degree: "MBA",
-    period: "2018",
-    details: "Member of Entrepreneur, Consulting, Tech Media and Telecom, and INDEVOR Clubs."
+    degree: "Master of Business Administration (MBA)",
+    period: "2018 - 2019",
+    details: "Strategy specialization. Exchange at Wharton School of Business."
   },
   {
     school: "Università degli Studi di Firenze",
     location: "Florence, Italy",
-    degree: "Bachelor of Arts in Design",
-    period: "2008 - 2012",
-    details: "Graduated with honors: 110/110. Final project: Slam-Rain Harvesting - a DIY water purifier for developing countries."
+    degree: "Master's in Industrial Design",
+    period: "2009 - 2013",
+    details: "Thesis: \"Cultural Influence on Design Process\" - A comparative study between Italian and Israeli design approaches."
   }
 ];
 
 const Education = () => {
   return (
-    <section className="py-24 md:py-32">
+    <section id="education" className="py-24 md:py-32">
       <div className="section-container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

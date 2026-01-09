@@ -3,7 +3,7 @@ import { Shield } from "lucide-react";
 
 const Military = () => {
   return (
-    <section className="py-24 md:py-32">
+    <section id="military" className="py-24 md:py-32 bg-secondary/30">
       <div className="section-container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

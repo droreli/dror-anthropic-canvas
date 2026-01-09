@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, User } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-[85vh] flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-[85vh] flex items-center justify-center relative overflow-hidden pt-20">
       {/* Decorative elements inspired by Anthropic */}
-      <div className="absolute top-20 right-20 w-32 h-32 opacity-20">
+      <div className="absolute top-32 right-20 w-32 h-32 opacity-20">
         <svg viewBox="0 0 100 100" className="w-full h-full">
           <circle cx="20" cy="20" r="6" fill="hsl(var(--primary))" />
           <circle cx="50" cy="15" r="4" fill="hsl(var(--primary))" />
@@ -16,6 +16,18 @@ const Hero = () => {
       </div>
       
       <div className="section-container text-center">
+        {/* Profile Photo Placeholder */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center">
+            <User className="w-16 h-16 md:w-20 md:h-20 text-primary/40" />
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,18 +43,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 font-light leading-relaxed"
+          className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-4 font-light leading-relaxed"
         >
-          Product & Business Development Leader
+          Director, Solutions & Implementation
         </motion.p>
         
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="text-base md:text-lg text-muted-foreground/80 max-w-xl mx-auto mb-12 leading-relaxed"
+          className="text-lg md:text-xl text-primary font-medium max-w-xl mx-auto mb-12"
         >
-          Building products that matter, across five countries and countless adventures.
+          Payments & Crypto | Fintech Operations
         </motion.p>
         
         <motion.div

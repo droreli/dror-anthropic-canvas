@@ -4,7 +4,7 @@ import { Globe, Plane, Snowflake } from "lucide-react";
 const languages = [
   { name: "Hebrew", level: "Native" },
   { name: "English", level: "Fluent" },
-  { name: "Italian", level: "Business" }
+  { name: "Italian", level: "Fluent/Professional" }
 ];
 
 const interests = [
@@ -27,7 +27,7 @@ const interests = [
 
 const Skills = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary/30">
+    <section id="skills" className="py-24 md:py-32">
       <div className="section-container">
         <div className="grid md:grid-cols-2 gap-16">
           {/* Languages */}
