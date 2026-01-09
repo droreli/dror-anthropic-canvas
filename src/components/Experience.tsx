@@ -14,14 +14,14 @@ const experiences: ExperienceItem[] = [
     company: "Nuvei",
     location: "Israel",
     description: "Global payment technology company powering digital commerce",
-    role: "Director, Solutions & Implementation – Core Payments + Crypto",
-    period: "2024 - Present",
+    role: "Director, Solutions & Implementation – Core Payments, Crypto & AI (MCP)",
+    period: "Apr 2023 - Present",
     highlights: [
-      "Own solutioning and delivery for strategic merchants across core payments and crypto verticals",
-      "Design integration architectures covering checkout, tokenization, 3DS, smart routing, and multi-acquirer setups",
-      "Run cross-functional programs bridging Product, Engineering, Risk, and Commercial teams",
-      "Create reusable solution assets: playbooks, reference architectures, and training materials",
-      "Drive internal AI and automation initiatives to scale team capacity and knowledge management"
+      "Own end-to-end solutioning and delivery for strategic merchants across core payments (cards/APMs) and crypto, from discovery to go-live and stabilization",
+      "Reduced integration cycle time by standardizing integration artifacts (sequence diagrams, edge-case catalogs, test matrices, reconciliation checklists) and enforcing milestone-based delivery gates",
+      "Built and deployed an internal MCP-based AI agent for documentation search + guided troubleshooting, cutting first-response time on integration questions and deflecting repetitive support inquiries",
+      "Led Pay with Crypto initiatives including stablecoin enablement and remittance-adjacent flows",
+      "Established operating cadence across Product, R&D, Risk/Compliance, Support, and Commercial: weekly merchant health checks, blocker triage, escalation paths, and release readiness reviews"
     ]
   },
   {
@@ -29,36 +29,24 @@ const experiences: ExperienceItem[] = [
     location: "Israel",
     description: "Fiat-to-crypto payment infrastructure for exchanges and wallets",
     role: "Head of Sales Operations",
-    period: "Nov 2021 - 2024",
+    period: "Mid 2021 - Apr 2023",
     highlights: [
-      "Built the post-merger operating cadence between Simplex and Nuvei go-to-market teams",
-      "Owned forecasting, KPI dashboards, CRM governance, and territory/coverage planning",
-      "Aligned deal-execution workflows across Sales, Legal, Compliance, and Integration",
-      "Operationalized handoffs from Sales to Implementation, reducing onboarding friction"
-    ]
-  },
-  {
-    company: "DAO4Peace",
-    location: "Israel",
-    description: "A decentralized & autonomous global foundation leveraging open finance",
-    role: "Co-Founder and VP of Business Operations",
-    period: "2021 - Present",
-    highlights: [
-      "Secured pre-seed investment, US$100K for creating the first peace charity foundation on a blockchain",
-      "Developed charity foundation vision, mission, and strategy using VC methodologies",
-      "Lead brand creation, including UI/UX design, website development and social media"
+      "Owned forecasting, KPIs, CRM/process governance, pipeline inspection, and enablement for a high-growth crypto payments business during acquisition integration",
+      "Improved forecast accuracy and reduced pipeline slippage by rebuilding stage definitions, inspection rituals, and accountability dashboards",
+      "Increased deal velocity by tightening commercial-to-solutions handoffs (definition of done, SLAs, risk/compliance checkpoints) and standardizing deal review workflows",
+      "Supported strategic deals and solution packaging with Sales leadership, improving win-to-implementation conversion"
     ]
   },
   {
     company: "Vayomar",
     location: "Tel Aviv, Israel",
     description: "Boutique consultancy specializing in change management and innovation",
-    role: "Senior Consultant",
+    role: "Senior Consultant – Change Management & Innovation",
     period: "2020 - 2021",
     highlights: [
-      "Led Fortune 200 account across four continents, expanding program to two additional units",
-      "Facilitated post-merger integration and digital initiatives in a unicorn",
-      "Supported four major initiatives enabling 30% cost reduction from original budgets"
+      "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional units by delivering measurable adoption outcomes",
+      "Facilitated post-merger integration and digital initiatives at a unicorn; accelerated execution through operating-model design and leadership alignment",
+      "Supported CEO-level initiatives; enabled ~30% cost reduction vs initial budgets through prioritization, governance, and execution discipline"
     ]
   },
   {
@@ -68,45 +56,55 @@ const experiences: ExperienceItem[] = [
     role: "Senior Strategy Manager",
     period: "2019",
     highlights: [
-      "Managed strategic cross-functional projects establishing hybrid structure",
-      "Implemented new B2B delivery techniques, leading to 15% decrease in delivery time",
-      "Acted as advisor to CEO, increasing customer satisfaction by 12%"
+      "Owned cross-functional strategic programs to increase agility, including hybrid org structure and post-merger integration workstreams",
+      "Reduced B2B delivery time by ~15% through new operational techniques and clearer product-to-delivery handoffs"
     ]
   },
   {
     company: "Appslix",
-    location: "Global",
+    location: "Tel Aviv, Israel",
     description: "Global media company",
-    role: "Co-Founder and Head of Business Development",
+    role: "Co-Founder, Head of Business Development",
     period: "2016 - 2018",
     highlights: [
-      "Negotiated partnerships achieving 400% revenue increase, US$600K in 2017",
-      "Oversaw online advertising and digital marketing solutions (B2B)",
-      "Refined A/B testing methods for quality performance marketing"
+      "Drove ~400% revenue growth in one year (~US$600K in 2017) via strategic performance marketing partnerships and experimentation discipline",
+      "Built A/B testing cadence across offers, creatives, and channels; improved unit economics through iteration and partner optimization"
     ]
   },
   {
-    company: "WoOdie",
+    company: "WoOdie Naturally Cool",
     location: "International",
     description: "Eco-sustainable sunglasses company",
-    role: "Co-Founder and CEO",
+    role: "Co-Founder & CEO",
     period: "2014 - 2017",
     highlights: [
-      "Secured US$150K angel investment through compelling pitch",
-      "Grew sales from US$50K to US$700K by optimizing marketing campaigns",
+      "Raised ~US$150K angel investment through compelling pitch",
+      "Grew sales to ~US$700K (2016) by optimizing marketing campaigns",
       "Partnered with KLM, Sprayground & OLN for international reach"
     ]
   },
   {
     company: "Hisense International",
-    location: "Qingdao, China",
+    location: "China & USA",
     description: "Chinese multinational electronics manufacturer",
-    role: "Senior Product Designer",
-    period: "2013 - 2014",
+    role: "Product Design & Senior Product Designer",
+    period: "2012 - 2014",
     highlights: [
       "Developed corporate design strategy for US market",
       "Enabled partnerships with Best Buy, Sam's Club, and Costco",
-      "Designed Vidaa smart TV platform unveiled at CES 2014"
+      "Designed Vidaa Smart TV platform showcased at CES 2014"
+    ]
+  },
+  {
+    company: "DAO4Peace",
+    location: "Israel",
+    description: "Decentralized & autonomous global foundation leveraging open finance",
+    role: "Co-Founder & VP Business Operations",
+    period: "2021 - Present",
+    highlights: [
+      "Secured pre-seed investment ~US$100K for creating the first peace charity foundation on a blockchain",
+      "Developed charity foundation vision, mission, and strategy using VC methodologies",
+      "Lead brand creation, including UI/UX design, website development and social media"
     ]
   }
 ];

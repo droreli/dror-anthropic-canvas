@@ -54,7 +54,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="text-lg md:text-xl text-primary font-medium max-w-xl mx-auto mb-12"
         >
-          Payments & Crypto | Fintech Operations
+          Core Payments, Crypto & AI (MCP)
         </motion.p>
         
         <motion.div
