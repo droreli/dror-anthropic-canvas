@@ -4,7 +4,7 @@ import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
-    <section className="min-h-[85vh] flex items-center justify-center relative overflow-hidden pt-20">
+    <section className="min-h-[85vh] flex items-center justify-center relative overflow-hidden pt-32">
       {/* Decorative elements inspired by Anthropic */}
       <div className="absolute top-32 right-20 w-32 h-32 opacity-20">
         <svg viewBox="0 0 100 100" className="w-full h-full">
