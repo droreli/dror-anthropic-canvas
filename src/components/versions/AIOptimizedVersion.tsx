@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 import { 
   Mail, Phone, MapPin, Download, Bot, 
-  CheckCircle2, Award, Briefcase, GraduationCap,
-  Code2, Globe, Shield, Cpu, Database, Zap
+  CheckCircle2, Briefcase, GraduationCap,
+  Globe, Shield, Zap, Cpu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
 
-// Structured data for AI parsing
+// Structured data for AI parsing - matches Classic version exactly
 const candidateData = {
   name: "Dror Ben-Eliyahu",
-  title: "Director, Solutions & Implementation",
+  title: "Director, Solutions & Implementation – Core Payments, Crypto & AI (MCP)",
   email: "Droreli@gmail.com",
   phone: "+972-54-5441014",
   location: "Israel & EU (Work authorized)",
@@ -18,7 +18,8 @@ const candidateData = {
   keywords: [
     "Fintech", "Payments", "Crypto", "Web3", "AI", "MCP",
     "Solutions Engineering", "Implementation", "Integration",
-    "B2B", "Enterprise", "SaaS", "API", "SDK"
+    "B2B", "Enterprise", "SaaS", "API", "SDK", "RevOps",
+    "Change Management", "Strategic Partnerships", "Go-to-Market"
   ],
   
   topSkills: [
@@ -31,63 +32,108 @@ const candidateData = {
   
   experience: [
     {
-      company: "Mesh",
-      role: "Director, Solutions & Implementation",
-      period: "Nov 2024 – Present",
-      duration: "Current",
-      keywords: ["Crypto", "B2B", "Enterprise", "AI", "MCP"],
+      company: "Nuvei",
+      location: "Israel",
+      description: "Global payment technology company powering digital commerce",
+      role: "Director, Solutions & Implementation – Core Payments, Crypto & AI (MCP)",
+      period: "Apr 2023 – Present",
+      keywords: ["Payments", "Crypto", "AI", "MCP", "Enterprise"],
       achievements: [
-        "Leading solutions engineering for Web3 infrastructure",
-        "Building AI-native developer tooling",
-        "Implementing MCP architecture patterns"
+        "Own end-to-end solutioning and delivery for strategic merchants across core payments (cards/APMs) and crypto, from discovery to go-live and stabilization",
+        "Reduced integration cycle time by standardizing integration artifacts (sequence diagrams, edge-case catalogs, test matrices, reconciliation checklists) and enforcing milestone-based delivery gates",
+        "Built and deployed an internal MCP-based AI agent for documentation search + guided troubleshooting, cutting first-response time on integration questions and deflecting repetitive support inquiries",
+        "Led Pay with Crypto initiatives including stablecoin enablement and remittance-adjacent flows",
+        "Established operating cadence across Product, R&D, Risk/Compliance, Support, and Commercial: weekly merchant health checks, blocker triage, escalation paths, and release readiness reviews"
       ]
     },
     {
-      company: "Zero Hash",
-      role: "Director, Solutions Engineering",
-      period: "Jul 2022 – Nov 2024",
-      duration: "2.4 years",
-      keywords: ["Crypto", "Payments", "Enterprise", "Integration"],
+      company: "Simplex (acquired by Nuvei)",
+      location: "Israel",
+      description: "Fiat-to-crypto payment infrastructure for exchanges and wallets",
+      role: "Head of Sales Operations",
+      period: "Mid 2021 – Apr 2023",
+      keywords: ["Crypto", "Payments", "RevOps", "Forecasting", "Pipeline"],
       achievements: [
-        "Scaled from 10 to 50+ enterprise integrations",
-        "Built solutions team from ground up",
-        "Established integration playbook and standards"
+        "Owned forecasting, KPIs, CRM/process governance, pipeline inspection, and enablement for a high-growth crypto payments business during acquisition integration",
+        "Improved forecast accuracy and reduced pipeline slippage by rebuilding stage definitions, inspection rituals, and accountability dashboards",
+        "Increased deal velocity by tightening commercial-to-solutions handoffs (definition of done, SLAs, risk/compliance checkpoints) and standardizing deal review workflows",
+        "Supported strategic deals and solution packaging with Sales leadership, improving win-to-implementation conversion"
       ]
     },
     {
-      company: "Simplex (by Nuvei)",
-      role: "Head of Implementation",
-      period: "Oct 2018 – Jul 2022",
-      duration: "3.9 years",
-      keywords: ["Fiat-to-Crypto", "Payments", "Implementation", "First-to-market"],
+      company: "Vayomar",
+      location: "Tel Aviv, Israel",
+      description: "Boutique consultancy specializing in change management and innovation",
+      role: "Senior Consultant – Change Management & Innovation",
+      period: "2020 – 2021",
+      keywords: ["Change Management", "Consulting", "Fortune 200", "Post-Merger Integration"],
       achievements: [
-        "Built first fiat-to-crypto payment rails",
-        "Launched product from zero to market leader",
-        "Managed full implementation lifecycle"
+        "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional units by delivering measurable adoption outcomes",
+        "Facilitated post-merger integration and digital initiatives at a unicorn; accelerated execution through operating-model design and leadership alignment",
+        "Supported CEO-level initiatives; enabled ~30% cost reduction vs initial budgets through prioritization, governance, and execution discipline"
       ]
     },
     {
-      company: "SundaySky",
-      role: "Global Revenue Operations Manager",
-      period: "Dec 2015 – Oct 2018",
-      duration: "2.9 years",
-      keywords: ["RevOps", "SaaS", "Salesforce", "Video"],
+      company: "MotorK",
+      location: "Milan, Italy",
+      description: "Integrated, end-to-end solutions for the automotive industry",
+      role: "Senior Strategy Manager",
+      period: "2019",
+      keywords: ["Strategy", "Post-Merger Integration", "Automotive", "SaaS"],
       achievements: [
-        "Managed $25M+ pipeline operations",
-        "Implemented Salesforce automation",
-        "Led cross-functional revenue team"
+        "Owned cross-functional strategic programs to increase agility, including hybrid org structure and post-merger integration workstreams",
+        "Reduced B2B delivery time by ~15% through new operational techniques and clearer product-to-delivery handoffs"
       ]
     },
     {
-      company: "Vodafone Germany",
-      role: "Corporate Customer Service Team Lead",
-      period: "Apr 2012 – Sep 2015",
-      duration: "3.5 years",
-      keywords: ["Enterprise", "B2B", "Telecom", "Customer Success"],
+      company: "Appslix",
+      location: "Tel Aviv, Israel",
+      description: "Global media company",
+      role: "Co-Founder, Head of Business Development",
+      period: "2016 – 2018",
+      keywords: ["Startup", "Co-Founder", "Business Development", "Performance Marketing"],
       achievements: [
-        "Managed enterprise customer portfolio",
-        "Led team of 15 customer success managers",
-        "Achieved 95%+ customer retention"
+        "Drove ~400% revenue growth in one year (~US$600K in 2017) via strategic performance marketing partnerships and experimentation discipline",
+        "Built A/B testing cadence across offers, creatives, and channels; improved unit economics through iteration and partner optimization"
+      ]
+    },
+    {
+      company: "WoOdie Naturally Cool",
+      location: "International",
+      description: "Eco-sustainable sunglasses company",
+      role: "Co-Founder & CEO",
+      period: "2014 – 2017",
+      keywords: ["Startup", "CEO", "E-commerce", "Fundraising"],
+      achievements: [
+        "Raised ~US$150K angel investment through compelling pitch",
+        "Grew sales to ~US$700K (2016) by optimizing marketing campaigns",
+        "Partnered with KLM, Sprayground & OLN for international reach"
+      ]
+    },
+    {
+      company: "Hisense International",
+      location: "China & USA",
+      description: "Chinese multinational electronics manufacturer",
+      role: "Product Design & Senior Product Designer",
+      period: "2012 – 2014",
+      keywords: ["Product Design", "Consumer Electronics", "Retail Partnerships"],
+      achievements: [
+        "Developed corporate design strategy for US market",
+        "Enabled partnerships with Best Buy, Sam's Club, and Costco",
+        "Designed Vidaa Smart TV platform showcased at CES 2014"
+      ]
+    },
+    {
+      company: "DAO4Peace",
+      location: "Israel",
+      description: "Decentralized & autonomous global foundation leveraging open finance",
+      role: "Co-Founder & VP Business Operations",
+      period: "2021 – Present",
+      keywords: ["Web3", "DAO", "Blockchain", "Charity", "Co-Founder"],
+      achievements: [
+        "Secured pre-seed investment ~US$100K for creating the first peace charity foundation on a blockchain",
+        "Developed charity foundation vision, mission, and strategy using VC methodologies",
+        "Lead brand creation, including UI/UX design, website development and social media"
       ]
     }
   ],
@@ -100,7 +146,7 @@ const candidateData = {
   
   languages: ["English (Native)", "Hebrew (Native)", "German (Fluent)"],
   
-  certifications: ["Israeli Air Force – Ground Control Officer (2002-2005)"]
+  military: "Israeli Air Force – Ground Control Officer (2002-2005)"
 };
 
 const SkillBar = ({ skill }: { skill: { name: string; level: number } }) => (
@@ -224,21 +270,22 @@ const AIOptimizedVersion = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
+                    transition={{ delay: i * 0.05 }}
                     className="relative pl-6 border-l-2 border-primary/30 hover:border-primary transition-colors"
                   >
                     <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full" />
                     
-                    <div className="flex flex-wrap items-baseline gap-2 mb-2">
+                    <div className="flex flex-wrap items-baseline gap-2 mb-1">
                       <h3 className="text-xl font-bold">{exp.company}</h3>
-                      <span className="text-sm text-muted-foreground">({exp.duration})</span>
+                      <span className="text-sm text-muted-foreground">· {exp.location}</span>
                     </div>
                     
+                    <p className="text-sm text-muted-foreground mb-2">{exp.description}</p>
                     <p className="text-primary font-medium mb-1">{exp.role}</p>
                     <p className="text-sm text-muted-foreground mb-3">{exp.period}</p>
                     
-                    {/* Achievements */}
-                    <ul className="space-y-1 mb-3">
+                    {/* Achievements with impact focus */}
+                    <ul className="space-y-2 mb-3">
                       {exp.achievements.map((achievement, j) => (
                         <li key={j} className="flex items-start gap-2 text-sm">
                           <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
@@ -324,19 +371,19 @@ const AIOptimizedVersion = () => {
                 Military Service
               </h2>
               
-              <p className="text-sm">{candidateData.certifications[0]}</p>
+              <p className="text-sm">{candidateData.military}</p>
             </section>
 
-            {/* JSON-LD for AI */}
+            {/* JSON-LD Info */}
             <section className="p-4 bg-foreground/5 rounded-xl border border-border">
               <h3 className="flex items-center gap-2 text-sm font-semibold mb-3">
-                <Database className="w-4 h-4 text-primary" />
-                Structured Data
+                <Bot className="w-4 h-4 text-primary" />
+                AI-Optimized
               </h3>
               <p className="text-xs text-muted-foreground mb-2">
-                This page includes JSON-LD schema for optimal AI parsing.
+                This page includes JSON-LD schema and structured data for optimal AI parsing and ATS compatibility.
               </p>
-              <code className="text-xs text-primary block overflow-x-auto">
+              <code className="text-xs text-primary block">
                 @type: Person, JobSeeker
               </code>
             </section>
