@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { 
-  Mail, Phone, MapPin, Download, Bot, 
+  Mail, Phone, MapPin, Download, 
   CheckCircle2, Briefcase, GraduationCap,
   Globe, Shield, Zap, Cpu
 } from "lucide-react";
@@ -23,10 +23,10 @@ const candidateData = {
   ],
   
   topSkills: [
-    { name: "Payment Infrastructure", level: 95 },
-    { name: "Crypto/Web3 Integration", level: 92 },
-    { name: "AI/MCP Architecture", level: 88 },
-    { name: "Enterprise Solutions", level: 94 },
+    { name: "Crypto/Web3 Integration", level: 95 },
+    { name: "Payment Infrastructure", level: 90 },
+    { name: "AI/MCP Architecture", level: 80 },
+    { name: "Enterprise Payment Solutions", level: 90 },
     { name: "Cross-functional Leadership", level: 90 },
   ],
   
@@ -59,92 +59,15 @@ const candidateData = {
         "Increased deal velocity by tightening commercial-to-solutions handoffs (definition of done, SLAs, risk/compliance checkpoints) and standardizing deal review workflows",
         "Supported strategic deals and solution packaging with Sales leadership, improving win-to-implementation conversion"
       ]
-    },
-    {
-      company: "Vayomar",
-      location: "Tel Aviv, Israel",
-      description: "Boutique consultancy specializing in change management and innovation",
-      role: "Senior Consultant – Change Management & Innovation",
-      period: "2020 – 2021",
-      keywords: ["Change Management", "Consulting", "Fortune 200", "Post-Merger Integration"],
-      achievements: [
-        "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional units by delivering measurable adoption outcomes",
-        "Facilitated post-merger integration and digital initiatives at a unicorn; accelerated execution through operating-model design and leadership alignment",
-        "Supported CEO-level initiatives; enabled ~30% cost reduction vs initial budgets through prioritization, governance, and execution discipline"
-      ]
-    },
-    {
-      company: "MotorK",
-      location: "Milan, Italy",
-      description: "Integrated, end-to-end solutions for the automotive industry",
-      role: "Senior Strategy Manager",
-      period: "2019",
-      keywords: ["Strategy", "Post-Merger Integration", "Automotive", "SaaS"],
-      achievements: [
-        "Owned cross-functional strategic programs to increase agility, including hybrid org structure and post-merger integration workstreams",
-        "Reduced B2B delivery time by ~15% through new operational techniques and clearer product-to-delivery handoffs"
-      ]
-    },
-    {
-      company: "Appslix",
-      location: "Tel Aviv, Israel",
-      description: "Global media company",
-      role: "Co-Founder, Head of Business Development",
-      period: "2016 – 2018",
-      keywords: ["Startup", "Co-Founder", "Business Development", "Performance Marketing"],
-      achievements: [
-        "Drove ~400% revenue growth in one year (~US$600K in 2017) via strategic performance marketing partnerships and experimentation discipline",
-        "Built A/B testing cadence across offers, creatives, and channels; improved unit economics through iteration and partner optimization"
-      ]
-    },
-    {
-      company: "WoOdie Naturally Cool",
-      location: "International",
-      description: "Eco-sustainable sunglasses company",
-      role: "Co-Founder & CEO",
-      period: "2014 – 2017",
-      keywords: ["Startup", "CEO", "E-commerce", "Fundraising"],
-      achievements: [
-        "Raised ~US$150K angel investment through compelling pitch",
-        "Grew sales to ~US$700K (2016) by optimizing marketing campaigns",
-        "Partnered with KLM, Sprayground & OLN for international reach"
-      ]
-    },
-    {
-      company: "Hisense International",
-      location: "China & USA",
-      description: "Chinese multinational electronics manufacturer",
-      role: "Product Design & Senior Product Designer",
-      period: "2012 – 2014",
-      keywords: ["Product Design", "Consumer Electronics", "Retail Partnerships"],
-      achievements: [
-        "Developed corporate design strategy for US market",
-        "Enabled partnerships with Best Buy, Sam's Club, and Costco",
-        "Designed Vidaa Smart TV platform showcased at CES 2014"
-      ]
-    },
-    {
-      company: "DAO4Peace",
-      location: "Israel",
-      description: "Decentralized & autonomous global foundation leveraging open finance",
-      role: "Co-Founder & VP Business Operations",
-      period: "2021 – Present",
-      keywords: ["Web3", "DAO", "Blockchain", "Charity", "Co-Founder"],
-      achievements: [
-        "Secured pre-seed investment ~US$100K for creating the first peace charity foundation on a blockchain",
-        "Developed charity foundation vision, mission, and strategy using VC methodologies",
-        "Lead brand creation, including UI/UX design, website development and social media"
-      ]
     }
   ],
   
   education: [
-    { degree: "BSc. Business Administration & Economics", school: "The Open University of Israel" },
-    { degree: "Web Development Program", school: "John Bryce College" },
-    { degree: "International Management Program", school: "CDI College, Canada" }
+    { degree: "Master of Business Administration (MBA)", school: "INSEAD, Fontainebleau, France", period: "2018 - 2019", details: "Strategy specialization. Exchange at Wharton School of Business." },
+    { degree: "Master's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2009 - 2013", details: "Thesis: Cultural Influence on Design Process" }
   ],
   
-  languages: ["English (Native)", "Hebrew (Native)", "German (Fluent)"],
+  languages: ["English (Native)", "Hebrew (Native)", "Italian (Fluent)"],
   
   military: "Israeli Air Force – Ground Control Officer (2002-2005)"
 };
@@ -170,20 +93,6 @@ const SkillBar = ({ skill }: { skill: { name: string; level: number } }) => (
 const AIOptimizedVersion = () => {
   return (
     <div className="min-h-screen">
-      {/* AI Notice Banner */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-b border-primary/20"
-      >
-        <div className="section-container py-3 flex items-center justify-center gap-2 text-sm">
-          <Bot className="w-4 h-4 text-primary" />
-          <span className="text-muted-foreground">
-            This version is optimized for <span className="text-primary font-medium">AI agents</span> and <span className="text-primary font-medium">ATS systems</span>
-          </span>
-        </div>
-      </motion.div>
-
       {/* Structured Header */}
       <section className="pt-24 pb-16 border-b border-border">
         <div className="section-container">
@@ -325,6 +234,8 @@ const AIOptimizedVersion = () => {
                   >
                     <p className="font-medium">{edu.degree}</p>
                     <p className="text-sm text-muted-foreground">{edu.school}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{edu.period}</p>
+                    <p className="text-xs text-muted-foreground mt-2">{edu.details}</p>
                   </motion.div>
                 ))}
               </div>
@@ -374,19 +285,6 @@ const AIOptimizedVersion = () => {
               <p className="text-sm">{candidateData.military}</p>
             </section>
 
-            {/* JSON-LD Info */}
-            <section className="p-4 bg-foreground/5 rounded-xl border border-border">
-              <h3 className="flex items-center gap-2 text-sm font-semibold mb-3">
-                <Bot className="w-4 h-4 text-primary" />
-                AI-Optimized
-              </h3>
-              <p className="text-xs text-muted-foreground mb-2">
-                This page includes JSON-LD schema and structured data for optimal AI parsing and ATS compatibility.
-              </p>
-              <code className="text-xs text-primary block">
-                @type: Person, JobSeeker
-              </code>
-            </section>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Sparkles, Zap, Bot } from "lucide-react";
+import { Sparkles, Bot } from "lucide-react";
 
-type Version = "classic" | "punchy" | "ai";
+type Version = "classic" | "ai";
 
 interface VersionSwitcherProps {
   version: Version;
@@ -10,7 +10,6 @@ interface VersionSwitcherProps {
 
 const versions = [
   { id: "classic" as Version, label: "Classic", icon: Sparkles, description: "Full story" },
-  { id: "punchy" as Version, label: "Punchy", icon: Zap, description: "Bold & fast" },
   { id: "ai" as Version, label: "AI-Ready", icon: Bot, description: "For agents" },
 ];
 
