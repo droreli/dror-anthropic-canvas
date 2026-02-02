@@ -30,6 +30,8 @@ const candidateData = {
     { name: "Cross-functional Leadership", level: 90 },
   ],
   
+  about: "Fintech solutions and delivery leader with a RevOps foundation, spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems: integration standards, operating cadences, escalation paths, and automation that reduces cycle time and improves launch reliability. Strong cross-functional operator across Product, R&D, Risk/Compliance, Support, and Commercial. International experience across five countries with a track record of launching successful products in both low and high-tech ecosystems.",
+  
   experience: [
     {
       company: "Nuvei",
@@ -58,6 +60,82 @@ const candidateData = {
         "Improved forecast accuracy and reduced pipeline slippage by rebuilding stage definitions, inspection rituals, and accountability dashboards",
         "Increased deal velocity by tightening commercial-to-solutions handoffs (definition of done, SLAs, risk/compliance checkpoints) and standardizing deal review workflows",
         "Supported strategic deals and solution packaging with Sales leadership, improving win-to-implementation conversion"
+      ]
+    },
+    {
+      company: "Vayomar",
+      location: "Tel Aviv, Israel",
+      description: "Boutique consultancy specializing in change management and innovation",
+      role: "Senior Consultant – Change Management & Innovation",
+      period: "2020 – 2021",
+      keywords: ["Change Management", "Consulting", "Fortune 200", "Digital Transformation"],
+      achievements: [
+        "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional units by delivering measurable adoption outcomes",
+        "Facilitated post-merger integration and digital initiatives at a unicorn; accelerated execution through operating-model design and leadership alignment",
+        "Supported CEO-level initiatives; enabled ~30% cost reduction vs initial budgets through prioritization, governance, and execution discipline"
+      ]
+    },
+    {
+      company: "MotorK",
+      location: "Milan, Italy",
+      description: "Integrated, end-to-end solutions for the automotive industry",
+      role: "Senior Strategy Manager",
+      period: "2019",
+      keywords: ["Strategy", "Post-merger Integration", "Automotive", "SaaS"],
+      achievements: [
+        "Owned cross-functional strategic programs to increase agility, including hybrid org structure and post-merger integration workstreams",
+        "Reduced B2B delivery time by ~15% through new operational techniques and clearer product-to-delivery handoffs"
+      ]
+    },
+    {
+      company: "Appslix",
+      location: "Tel Aviv, Israel",
+      description: "Global media company",
+      role: "Co-Founder, Head of Business Development",
+      period: "2016 – 2018",
+      keywords: ["Startup", "Business Development", "Performance Marketing", "Growth"],
+      achievements: [
+        "Drove ~400% revenue growth in one year (~US$600K in 2017) via strategic performance marketing partnerships and experimentation discipline",
+        "Built A/B testing cadence across offers, creatives, and channels; improved unit economics through iteration and partner optimization"
+      ]
+    },
+    {
+      company: "WoOdie Naturally Cool",
+      location: "International",
+      description: "Eco-sustainable sunglasses company",
+      role: "Co-Founder & CEO",
+      period: "2014 – 2017",
+      keywords: ["E-commerce", "Startup", "CEO", "Fundraising"],
+      achievements: [
+        "Raised ~US$150K angel investment through compelling pitch",
+        "Grew sales to ~US$700K (2016) by optimizing marketing campaigns",
+        "Partnered with KLM, Sprayground & OLN for international reach"
+      ]
+    },
+    {
+      company: "Hisense International",
+      location: "China & USA",
+      description: "Chinese multinational electronics manufacturer",
+      role: "Product Design & Senior Product Designer",
+      period: "2012 – 2014",
+      keywords: ["Product Design", "Consumer Electronics", "Enterprise Partnerships"],
+      achievements: [
+        "Developed corporate design strategy for US market",
+        "Enabled partnerships with Best Buy, Sam's Club, and Costco",
+        "Designed Vidaa Smart TV platform showcased at CES 2014"
+      ]
+    },
+    {
+      company: "DAO4Peace",
+      location: "Israel",
+      description: "Decentralized & autonomous global foundation leveraging open finance",
+      role: "Co-Founder & VP Business Operations",
+      period: "2021 – Present",
+      keywords: ["Web3", "Blockchain", "Charity", "DAO"],
+      achievements: [
+        "Secured pre-seed investment ~US$100K for creating the first peace charity foundation on a blockchain",
+        "Developed charity foundation vision, mission, and strategy using VC methodologies",
+        "Lead brand creation, including UI/UX design, website development and social media"
       ]
     }
   ],
@@ -156,6 +234,22 @@ const AIOptimizedVersion = () => {
                 </span>
               ))}
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-12 border-b border-border">
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-lg md:text-xl leading-relaxed text-foreground/90">
+              {candidateData.about}
+            </p>
           </motion.div>
         </div>
       </section>
