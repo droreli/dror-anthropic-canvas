@@ -7,14 +7,14 @@ const educations = [
     location: "Fontainebleau, France",
     degree: "Master of Business Administration (MBA)",
     period: "2018 - 2019",
-    details: "Strategy specialization. Exchange at Wharton School of Business."
+    details: "Top-tier global MBA taught in English. Strategy specialization with an exchange at Wharton School of Business."
   },
   {
     school: "Università degli Studi di Firenze",
     location: "Florence, Italy",
     degree: "Master's in Industrial Design",
     period: "2009 - 2013",
-    details: "Thesis: \"Cultural Influence on Design Process\" - A comparative study between Italian and Israeli design approaches."
+    details: "Completed in Italy. Thesis: \"Cultural Influence on Design Process\" — a comparative study between Italian and Israeli design approaches."
   }
 ];
 
@@ -31,6 +31,11 @@ const Education = () => {
         >
           Education
         </motion.h2>
+
+        <p className="text-lg text-muted-foreground mb-10 max-w-3xl">
+          Israel-born and raised, academically trained in Italy, and INSEAD MBA in France (English-taught) — a rare international
+          education path that strengthens global leadership and execution.
+        </p>
         
         <div className="grid md:grid-cols-2 gap-8">
           {educations.map((edu, index) => (

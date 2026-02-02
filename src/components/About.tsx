@@ -16,13 +16,14 @@ const About = () => {
           <p className="text-2xl md:text-3xl lg:text-4xl font-serif leading-relaxed text-foreground/90">
             Fintech solutions and delivery leader with a RevOps foundation, spanning{" "}
             <span className="text-gradient font-semibold">core payments, crypto, and AI-driven enablement</span>.{" "}
-            Known for turning ambiguity into repeatable systems: integration standards, operating cadences, 
+            Known for turning ambiguity into repeatable systems: integration standards, operating cadences,
             escalation paths, and automation that reduces cycle time and improves launch reliability.
           </p>
           <p className="text-lg md:text-xl text-muted-foreground mt-6 leading-relaxed">
-            Strong cross-functional operator across Product, R&D, Risk/Compliance, Support, and Commercial. 
-            International experience across five countries with a track record of launching successful products 
-            in both low and high-tech ecosystems.
+            Strong cross-functional operator across Product, R&D, Risk/Compliance, Support, and Commercial,
+            delivering measurable outcomes like ~35% faster integrations, ~45% faster first-response time, and
+            ~25% higher launch reliability. Israel-born and raised, first degree in Italy, and INSEAD MBA in France
+            (taught in English) — a rare international education path that strengthens global execution.
           </p>
         </motion.div>
       </div>

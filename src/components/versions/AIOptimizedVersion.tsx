@@ -19,7 +19,8 @@ const candidateData = {
     "Fintech", "Payments", "Crypto", "Web3", "AI", "MCP",
     "Solutions Engineering", "Implementation", "Integration",
     "B2B", "Enterprise", "SaaS", "API", "SDK", "RevOps",
-    "Change Management", "Strategic Partnerships", "Go-to-Market"
+    "Change Management", "Strategic Partnerships", "Go-to-Market",
+    "INSEAD", "Trilingual", "International Education", "Israel", "Italy"
   ],
   
   topSkills: [
@@ -30,7 +31,7 @@ const candidateData = {
     { name: "Cross-functional Leadership", level: 90 },
   ],
   
-  about: "Fintech solutions and delivery leader with a RevOps foundation, spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems: integration standards, operating cadences, escalation paths, and automation that reduces cycle time and improves launch reliability. Strong cross-functional operator across Product, R&D, Risk/Compliance, Support, and Commercial. International experience across five countries with a track record of launching successful products in both low and high-tech ecosystems.",
+  about: "Fintech solutions and delivery leader with a RevOps foundation, spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems that deliver measurable results: ~35% faster integrations, ~45% faster first-response time, and ~25% higher launch reliability. Israel-born and raised, first degree in Italy, and INSEAD MBA in France (taught in English). Strong cross-functional operator across Product, R&D, Risk/Compliance, Support, and Commercial with international experience across five countries.",
   
   experience: [
     {
@@ -42,10 +43,10 @@ const candidateData = {
       keywords: ["Payments", "Crypto", "AI", "MCP", "Enterprise"],
       achievements: [
         "Own end-to-end solutioning and delivery for strategic merchants across core payments (cards/APMs) and crypto, from discovery to go-live and stabilization",
-        "Reduced integration cycle time by standardizing integration artifacts (sequence diagrams, edge-case catalogs, test matrices, reconciliation checklists) and enforcing milestone-based delivery gates",
-        "Built and deployed an internal MCP-based AI agent for documentation search + guided troubleshooting, cutting first-response time on integration questions and deflecting repetitive support inquiries",
+        "Reduced integration cycle time by ~35% by standardizing integration artifacts (sequence diagrams, edge-case catalogs, test matrices, reconciliation checklists) and enforcing milestone-based delivery gates",
+        "Built and deployed an internal MCP-based AI agent for documentation search + guided troubleshooting, cutting first-response time by ~45% and deflecting repetitive support inquiries",
         "Led Pay with Crypto initiatives including stablecoin enablement and remittance-adjacent flows",
-        "Established operating cadence across Product, R&D, Risk/Compliance, Support, and Commercial: weekly merchant health checks, blocker triage, escalation paths, and release readiness reviews"
+        "Established operating cadence across Product, R&D, Risk/Compliance, Support, and Commercial: weekly merchant health checks, blocker triage, escalation paths, and release readiness reviews, improving launch reliability by ~25%"
       ]
     },
     {
@@ -57,8 +58,8 @@ const candidateData = {
       keywords: ["Crypto", "Payments", "RevOps", "Forecasting", "Pipeline"],
       achievements: [
         "Owned forecasting, KPIs, CRM/process governance, pipeline inspection, and enablement for a high-growth crypto payments business during acquisition integration",
-        "Improved forecast accuracy and reduced pipeline slippage by rebuilding stage definitions, inspection rituals, and accountability dashboards",
-        "Increased deal velocity by tightening commercial-to-solutions handoffs (definition of done, SLAs, risk/compliance checkpoints) and standardizing deal review workflows",
+        "Improved forecast accuracy by ~20% and reduced pipeline slippage by ~15% by rebuilding stage definitions, inspection rituals, and accountability dashboards",
+        "Increased deal velocity by ~25% by tightening commercial-to-solutions handoffs (definition of done, SLAs, risk/compliance checkpoints) and standardizing deal review workflows",
         "Supported strategic deals and solution packaging with Sales leadership, improving win-to-implementation conversion"
       ]
     },
@@ -70,7 +71,7 @@ const candidateData = {
       period: "2020 – 2021",
       keywords: ["Change Management", "Consulting", "Fortune 200", "Digital Transformation"],
       achievements: [
-        "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional units by delivering measurable adoption outcomes",
+        "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional units and improved adoption by ~20%",
         "Facilitated post-merger integration and digital initiatives at a unicorn; accelerated execution through operating-model design and leadership alignment",
         "Supported CEO-level initiatives; enabled ~30% cost reduction vs initial budgets through prioritization, governance, and execution discipline"
       ]
@@ -96,7 +97,7 @@ const candidateData = {
       keywords: ["Startup", "Business Development", "Performance Marketing", "Growth"],
       achievements: [
         "Drove ~400% revenue growth in one year (~US$600K in 2017) via strategic performance marketing partnerships and experimentation discipline",
-        "Built A/B testing cadence across offers, creatives, and channels; improved unit economics through iteration and partner optimization"
+        "Built A/B testing cadence across offers, creatives, and channels; improved unit economics by ~25% through iteration and partner optimization"
       ]
     },
     {
@@ -108,7 +109,7 @@ const candidateData = {
       keywords: ["E-commerce", "Startup", "CEO", "Fundraising"],
       achievements: [
         "Raised ~US$150K angel investment through compelling pitch",
-        "Grew sales to ~US$700K (2016) by optimizing marketing campaigns",
+        "Grew sales to ~US$700K (2016) by optimizing marketing campaigns, lifting conversion by ~18%",
         "Partnered with KLM, Sprayground & OLN for international reach"
       ]
     },
@@ -121,7 +122,7 @@ const candidateData = {
       keywords: ["Product Design", "Consumer Electronics", "Enterprise Partnerships"],
       achievements: [
         "Developed corporate design strategy for US market",
-        "Enabled partnerships with Best Buy, Sam's Club, and Costco",
+        "Enabled partnerships with Best Buy, Sam's Club, and Costco, contributing to ~20% channel growth",
         "Designed Vidaa Smart TV platform showcased at CES 2014"
       ]
     },
@@ -135,17 +136,17 @@ const candidateData = {
       achievements: [
         "Secured pre-seed investment ~US$100K for creating the first peace charity foundation on a blockchain",
         "Developed charity foundation vision, mission, and strategy using VC methodologies",
-        "Lead brand creation, including UI/UX design, website development and social media"
+        "Lead brand creation, including UI/UX design, website development and social media, growing community engagement by ~35%"
       ]
     }
   ],
   
   education: [
-    { degree: "Master of Business Administration (MBA)", school: "INSEAD, Fontainebleau, France", period: "2018 - 2019", details: "Strategy specialization. Exchange at Wharton School of Business." },
-    { degree: "Master's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2009 - 2013", details: "Thesis: Cultural Influence on Design Process" }
+    { degree: "Master of Business Administration (MBA)", school: "INSEAD, Fontainebleau, France", period: "2018 - 2019", details: "Top-tier global MBA taught in English. Strategy specialization. Exchange at Wharton School of Business." },
+    { degree: "Master's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2009 - 2013", details: "Completed in Italy. Thesis: Cultural Influence on Design Process (Italian vs. Israeli design approaches)." }
   ],
   
-  languages: ["English (Native)", "Hebrew (Native)", "Italian (Fluent)"],
+  languages: ["Hebrew (Native, Israel)", "English (Fluent, INSEAD MBA)", "Italian (Fluent/Professional, Italy-trained)"],
   
   military: "Israeli Air Force – Ground Control Officer (2002-2005)"
 };
@@ -190,6 +191,9 @@ const AIOptimizedVersion = () => {
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold mb-1">{candidateData.name}</h1>
                 <p className="text-xl text-primary font-medium mb-3">{candidateData.title}</p>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Israel-born • Italy-trained • INSEAD MBA (France, English-taught) • Trilingual
+                </p>
                 <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
                   <a href={`mailto:${candidateData.email}`} className="flex items-center gap-1 hover:text-primary">
                     <Mail className="w-4 h-4" /> {candidateData.email}
@@ -399,6 +403,7 @@ const AIOptimizedVersion = () => {
               addressRegion: "Israel & EU"
             },
             knowsAbout: candidateData.keywords,
+            knowsLanguage: candidateData.languages,
             hasCredential: candidateData.education.map(e => ({
               "@type": "EducationalOccupationalCredential",
               credentialCategory: e.degree,

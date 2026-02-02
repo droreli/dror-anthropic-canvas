@@ -1,7 +1,8 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "dror-cv",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Professional CV website for Dror Ben-Eliyahu with AI-optimized and classic versions",
   "type": "module",
   "scripts": {
     "dev": "vite",

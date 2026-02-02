@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Globe, Plane, Snowflake } from "lucide-react";
 
 const languages = [
-  { name: "Hebrew", level: "Native" },
-  { name: "English", level: "Fluent" },
-  { name: "Italian", level: "Fluent/Professional" }
+  { name: "Hebrew", level: "Native (Israel)" },
+  { name: "English", level: "Fluent (INSEAD MBA)" },
+  { name: "Italian", level: "Fluent/Professional (Italy-trained)" }
 ];
 
 const interests = [
@@ -60,6 +60,10 @@ const Skills = () => {
               <p className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">Work Authorization:</span>{" "}
                 Israeli & EU passports
+              </p>
+              <p className="text-sm text-muted-foreground mt-3">
+                <span className="font-medium text-foreground">International Education:</span>{" "}
+                Italy (Industrial Design) → France (INSEAD MBA)
               </p>
             </div>
           </motion.div>

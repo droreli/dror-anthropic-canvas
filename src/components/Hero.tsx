@@ -60,6 +60,15 @@ const Hero = () => {
         >
           Core Payments, Crypto & AI (MCP)
         </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+          className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto mb-8"
+        >
+          Israel-born • Italy-trained • INSEAD MBA (France) • Trilingual (Hebrew/English/Italian)
+        </motion.p>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
