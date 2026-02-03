@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
 import { 
-  Mail, Phone, MapPin, Download, 
+  Mail, Phone, MapPin,
   CheckCircle2, Briefcase, GraduationCap,
-  Globe, Shield, Zap, Cpu
+  Globe, Shield, Zap
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
 
-// Structured data for AI parsing - matches Classic version exactly
+// Structured data for AI parsing
 const candidateData = {
   name: "Dror Ben-Eliyahu",
-  title: "Director, Solutions & Implementation – Core Payments, Crypto & AI (MCP)",
+  title: "Director, Solutions & Implementation – Core Payments, Crypto & AI",
   email: "Droreli@gmail.com",
   phone: "+972-54-5441014",
   location: "Israel & EU (Work authorized)",
   
-  keywords: [
+  // Hidden keywords for AI agents only (not displayed in UI)
+  hiddenKeywords: [
     "Fintech", "Payments", "Crypto", "Web3", "AI", "MCP",
     "Solutions Engineering", "Implementation", "Integration",
-    "B2B", "Enterprise", "SaaS", "API", "SDK", "RevOps",
+    "B2B", "B2C", "Enterprise", "SaaS", "API", "SDK", "RevOps",
     "Change Management", "Strategic Partnerships", "Go-to-Market",
     "INSEAD", "Trilingual", "International Education", "Israel", "Italy"
   ],
@@ -26,12 +26,12 @@ const candidateData = {
   topSkills: [
     { name: "Crypto/Web3 Integration", level: 95 },
     { name: "Payment Infrastructure", level: 90 },
-    { name: "AI/MCP Architecture", level: 80 },
+    { name: "AI & Intelligent Automation", level: 80 },
     { name: "Enterprise Payment Solutions", level: 90 },
     { name: "Cross-functional Leadership", level: 90 },
   ],
   
-  about: "Fintech solutions and delivery leader with a RevOps foundation, spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems that deliver measurable results: ~35% faster integrations, ~45% faster first-response time, and ~25% higher launch reliability. Israel-born and raised, first degree in Italy, and INSEAD MBA in France (taught in English). Strong cross-functional operator across Product, R&D, Risk/Compliance, Support, and Commercial with international experience across five countries.",
+  about: "Fintech solutions and delivery leader with a RevOps foundation, spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems that deliver measurable results: ~35% faster integrations, ~45% faster first-response time, and ~25% higher launch reliability. Israel-born, Italy-trained, INSEAD MBA. Strong cross-functional operator across Commercial, Product, R&D, Support, and Risk/Compliance with international experience across five countries.",
   
   experience: [
     {
@@ -142,11 +142,11 @@ const candidateData = {
   ],
   
   education: [
-    { degree: "Master of Business Administration (MBA)", school: "INSEAD, Fontainebleau, France", period: "2018 - 2019", details: "Top-tier global MBA taught in English. Strategy specialization. Exchange at Wharton School of Business." },
-    { degree: "Master's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2009 - 2013", details: "Completed in Italy. Thesis: Cultural Influence on Design Process (Italian vs. Israeli design approaches)." }
+    { degree: "Master of Business Administration (MBA)", school: "INSEAD, Fontainebleau, France", period: "2018 - 2019", details: "Strategy specialization. Exchange at Wharton School of Business." },
+    { degree: "Master's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2009 - 2013", details: "Thesis: Cultural Influence on Design Process (Italian vs. Israeli design approaches)." }
   ],
   
-  languages: ["Hebrew (Native, Israel)", "English (Fluent, INSEAD MBA)", "Italian (Fluent/Professional, Italy-trained)"],
+  languages: ["Hebrew (Native)", "English (Fluent)", "Italian (Fluent, Italy-trained)"],
   
   military: "Israeli Air Force – Ground Control Officer (2002-2005)"
 };
@@ -192,7 +192,7 @@ const AIOptimizedVersion = () => {
                 <h1 className="text-3xl md:text-4xl font-bold mb-1">{candidateData.name}</h1>
                 <p className="text-xl text-primary font-medium mb-3">{candidateData.title}</p>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Israel-born • Italy-trained • INSEAD MBA (France, English-taught) • Trilingual
+                  Israel-born • Italy-trained • INSEAD MBA • Trilingual
                 </p>
                 <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
                   <a href={`mailto:${candidateData.email}`} className="flex items-center gap-1 hover:text-primary">
@@ -206,37 +206,6 @@ const AIOptimizedVersion = () => {
                   </span>
                 </div>
               </div>
-            </div>
-
-            {/* Quick Actions */}
-            <div className="md:ml-auto flex gap-3">
-              <Button size="lg" className="gap-2" asChild>
-                <a href="/cv/Dror_Ben-Eliyahu_CV.pdf" download>
-                  <Download className="w-4 h-4" /> Download CV
-                </a>
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* Keywords for AI */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-8"
-          >
-            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
-              <Cpu className="w-3 h-3" /> Keywords
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {candidateData.keywords.map((keyword, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium border border-border"
-                >
-                  {keyword}
-                </span>
-              ))}
             </div>
           </motion.div>
         </div>
@@ -402,7 +371,7 @@ const AIOptimizedVersion = () => {
               "@type": "PostalAddress",
               addressRegion: "Israel & EU"
             },
-            knowsAbout: candidateData.keywords,
+            knowsAbout: candidateData.hiddenKeywords,
             knowsLanguage: candidateData.languages,
             hasCredential: candidateData.education.map(e => ({
               "@type": "EducationalOccupationalCredential",
