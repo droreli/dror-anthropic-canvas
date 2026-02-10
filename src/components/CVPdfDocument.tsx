@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontFamily: "Helvetica-Bold",
     color: TEXT_COLOR,
-    marginBottom: 1,
+    marginBottom: 4,
   },
   title: {
     fontSize: 10,
@@ -219,8 +219,8 @@ const CVPdfDocument = () => {
     >
       {/* Single page that flows naturally - react-pdf handles page breaks */}
       <Page size="A4" style={styles.page} wrap>
-        {/* Header */}
-        <View style={styles.header} fixed>
+        {/* Header - only on first page */}
+        <View style={styles.header}>
           <Text style={styles.name}>{data.name}</Text>
           <Text style={styles.title}>{data.title}</Text>
           <View style={styles.contactRow}>
