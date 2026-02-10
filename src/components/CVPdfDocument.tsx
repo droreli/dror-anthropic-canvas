@@ -17,41 +17,35 @@ const styles = StyleSheet.create({
   page: {
     fontFamily: "Helvetica",
     fontSize: 9,
-    paddingTop: 28,
-    paddingBottom: 35,
-    paddingHorizontal: 40,
+    paddingTop: 30,
+    paddingBottom: 40,
+    paddingHorizontal: 45,
     color: TEXT_COLOR,
-    lineHeight: 1.35,
+    lineHeight: 1.3,
   },
   
-  // Header - matching screenshot style
+  // Header
   header: {
-    marginBottom: 14,
-  },
-  nameRow: {
-    flexDirection: "row",
-    alignItems: "baseline",
-    marginBottom: 3,
+    marginBottom: 12,
   },
   name: {
-    fontSize: 24,
+    fontSize: 26,
     fontFamily: "Helvetica-Bold",
     color: TEXT_COLOR,
+    marginBottom: 1,
   },
-  titleInline: {
+  title: {
     fontSize: 10,
     color: ACCENT_COLOR,
-    marginBottom: 4,
+    marginBottom: 5,
   },
   contactRow: {
     flexDirection: "row",
-    flexWrap: "wrap",
     fontSize: 8,
     color: MUTED_COLOR,
-    gap: 4,
   },
   contactSeparator: {
-    marginHorizontal: 6,
+    marginHorizontal: 8,
   },
   link: {
     color: MUTED_COLOR,
@@ -63,80 +57,80 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   sectionTitle: {
-    fontSize: 11,
+    fontSize: 10,
     fontFamily: "Helvetica-Bold",
     color: TEXT_COLOR,
-    marginBottom: 6,
+    marginBottom: 5,
     paddingBottom: 2,
-    borderBottomWidth: 1,
-    borderBottomColor: "#cccccc",
+    borderBottomWidth: 0.5,
+    borderBottomColor: "#999999",
     textTransform: "uppercase",
-    letterSpacing: 0.3,
+    letterSpacing: 0.5,
   },
   
-  // Bullets for Impact Highlights & Core Strengths
+  // Bullet items
   bulletItem: {
     flexDirection: "row",
-    marginBottom: 4,
+    marginBottom: 3,
   },
   bullet: {
-    width: 10,
+    width: 8,
     fontSize: 8,
     color: TEXT_COLOR,
   },
   bulletText: {
     flex: 1,
     fontSize: 8,
-    lineHeight: 1.4,
+    lineHeight: 1.35,
     color: TEXT_COLOR,
   },
   
-  // Summary paragraph
+  // Summary
   summaryText: {
-    fontSize: 8.5,
-    lineHeight: 1.5,
+    fontSize: 8,
+    lineHeight: 1.4,
     color: TEXT_COLOR,
     textAlign: "justify",
   },
   
-  // Experience items
+  // Experience
   experienceItem: {
     marginBottom: 8,
   },
-  expHeaderRow: {
+  expHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
+    marginBottom: 1,
   },
   companyRole: {
-    fontSize: 10,
+    fontSize: 9.5,
     fontFamily: "Helvetica-Bold",
     color: TEXT_COLOR,
     flex: 1,
   },
-  periodRight: {
+  period: {
     fontSize: 8,
     color: TEXT_COLOR,
     textAlign: "right",
-    minWidth: 90,
   },
-  roleSubtitle: {
-    fontSize: 9,
-    color: ACCENT_COLOR,
+  roleDesc: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 3,
   },
-  locationRight: {
+  subtitle: {
+    fontSize: 8,
+    color: ACCENT_COLOR,
+  },
+  location: {
     fontSize: 8,
     color: TEXT_COLOR,
     textAlign: "right",
-    marginTop: -12,
   },
-  
-  // Achievement bullets (smaller)
   achievementItem: {
     flexDirection: "row",
-    marginBottom: 2,
-    paddingLeft: 4,
+    marginBottom: 1.5,
   },
   achievementBullet: {
     width: 8,
@@ -146,34 +140,34 @@ const styles = StyleSheet.create({
   achievementText: {
     flex: 1,
     fontSize: 7.5,
-    lineHeight: 1.35,
+    lineHeight: 1.3,
     color: TEXT_COLOR,
   },
   
-  // Earlier Career section header divider
-  sectionDivider: {
-    borderTopWidth: 1,
-    borderTopColor: "#cccccc",
-    paddingTop: 8,
+  // Earlier Career divider
+  earlierCareerSection: {
     marginTop: 4,
+    paddingTop: 6,
+    borderTopWidth: 0.5,
+    borderTopColor: "#999999",
   },
   
-  // Two column for Education/Languages
+  // Two column layout
   twoColumn: {
     flexDirection: "row",
-    marginTop: 6,
+    marginTop: 8,
   },
   leftCol: {
     flex: 1,
-    paddingRight: 20,
+    paddingRight: 25,
   },
   rightCol: {
-    width: 150,
+    width: 140,
   },
   
   // Education
   eduItem: {
-    marginBottom: 8,
+    marginBottom: 6,
   },
   eduDegree: {
     fontSize: 9,
@@ -181,11 +175,11 @@ const styles = StyleSheet.create({
     color: TEXT_COLOR,
   },
   eduSchool: {
-    fontSize: 8,
+    fontSize: 7.5,
     color: MUTED_COLOR,
   },
   eduDetails: {
-    fontSize: 7.5,
+    fontSize: 7,
     color: MUTED_COLOR,
     marginTop: 1,
   },
@@ -201,8 +195,8 @@ const styles = StyleSheet.create({
   pageNumber: {
     position: "absolute",
     fontSize: 7,
-    bottom: 18,
-    right: 40,
+    bottom: 20,
+    right: 45,
     color: MUTED_COLOR,
   },
 });
@@ -210,10 +204,11 @@ const styles = StyleSheet.create({
 const CVPdfDocument = () => {
   const data = candidateData;
   
-  // Main experience: Nuvei, Simplex
-  // Earlier career: Everything else
-  const mainExperience = data.experience.slice(0, 2); // Nuvei, Simplex
-  const earlierCareer = data.experience.slice(2); // Vayomar, MotorK, Appslix, WoOdie, Hisense, DAO4Peace
+  // Split experience: Main roles vs Earlier Career
+  // Main: Nuvei, Simplex, Vayomar, MotorK (recent professional roles)
+  // Earlier: Appslix, WoOdie, Hisense, DAO4Peace (startups/earlier)
+  const mainExperience = data.experience.slice(0, 4);
+  const earlierCareer = data.experience.slice(4);
   
   return (
     <Document
@@ -222,14 +217,13 @@ const CVPdfDocument = () => {
       subject="Professional CV"
       keywords={data.hiddenKeywords.join(", ")}
     >
-      <Page size="A4" style={styles.page}>
-        {/* Header - Name + Title inline */}
-        <View style={styles.header}>
-          <View style={styles.nameRow}>
-            <Text style={styles.name}>{data.name}</Text>
-          </View>
-          <Text style={styles.titleInline}>{data.title}</Text>
-          <View style={[styles.contactRow, { marginTop: 4 }]}>
+      {/* Single page that flows naturally - react-pdf handles page breaks */}
+      <Page size="A4" style={styles.page} wrap>
+        {/* Header */}
+        <View style={styles.header} fixed>
+          <Text style={styles.name}>{data.name}</Text>
+          <Text style={styles.title}>{data.title}</Text>
+          <View style={styles.contactRow}>
             <Link src={`mailto:${data.email}`} style={styles.link}>{data.email}</Link>
             <Text style={styles.contactSeparator}>|</Text>
             <Link src={`tel:${data.phone}`} style={styles.link}>{data.phone}</Link>
@@ -274,19 +268,14 @@ const CVPdfDocument = () => {
           
           {mainExperience.map((exp, i) => (
             <View key={i} style={styles.experienceItem} wrap={false}>
-              {/* Company - Role + Period */}
-              <View style={styles.expHeaderRow}>
-                <Text style={styles.companyRole}>
-                  {exp.company} - {exp.role}
-                </Text>
-                <Text style={styles.periodRight}>{exp.period}</Text>
+              <View style={styles.expHeader}>
+                <Text style={styles.companyRole}>{exp.company} - {exp.role}</Text>
+                <Text style={styles.period}>{exp.period}</Text>
               </View>
-              {/* Subtitle/Description + Location */}
-              <View style={styles.expHeaderRow}>
-                <Text style={styles.roleSubtitle}>{exp.description}</Text>
-                <Text style={styles.locationRight}>{exp.location}</Text>
+              <View style={styles.roleDesc}>
+                <Text style={styles.subtitle}>{exp.description}</Text>
+                <Text style={styles.location}>{exp.location}</Text>
               </View>
-              {/* Achievements */}
               {exp.achievements.map((ach, j) => (
                 <View key={j} style={styles.achievementItem}>
                   <Text style={styles.achievementBullet}>•</Text>
@@ -297,27 +286,19 @@ const CVPdfDocument = () => {
           ))}
         </View>
 
-        <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`} fixed />
-      </Page>
-
-      {/* Page 2 - Earlier Career + Education */}
-      <Page size="A4" style={styles.page}>
-        
         {/* Earlier Career */}
-        <View style={[styles.section, styles.sectionDivider]}>
+        <View style={[styles.section, styles.earlierCareerSection]}>
           <Text style={styles.sectionTitle}>Earlier Career</Text>
           
           {earlierCareer.map((exp, i) => (
             <View key={i} style={styles.experienceItem} wrap={false}>
-              <View style={styles.expHeaderRow}>
-                <Text style={styles.companyRole}>
-                  {exp.company} - {exp.role}
-                </Text>
-                <Text style={styles.periodRight}>{exp.period}</Text>
+              <View style={styles.expHeader}>
+                <Text style={styles.companyRole}>{exp.company} - {exp.role}</Text>
+                <Text style={styles.period}>{exp.period}</Text>
               </View>
-              <View style={styles.expHeaderRow}>
-                <Text style={styles.roleSubtitle}>{exp.description}</Text>
-                <Text style={styles.locationRight}>{exp.location}</Text>
+              <View style={styles.roleDesc}>
+                <Text style={styles.subtitle}>{exp.description}</Text>
+                <Text style={styles.location}>{exp.location}</Text>
               </View>
               {exp.achievements.map((ach, j) => (
                 <View key={j} style={styles.achievementItem}>
@@ -329,7 +310,7 @@ const CVPdfDocument = () => {
           ))}
         </View>
 
-        {/* Two Column: Education | Languages + Military */}
+        {/* Education, Languages, Military - Two Column */}
         <View style={styles.twoColumn}>
           <View style={styles.leftCol}>
             <View style={styles.section}>
