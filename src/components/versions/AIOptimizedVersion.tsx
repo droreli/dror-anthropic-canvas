@@ -9,7 +9,7 @@ import profilePhoto from "@/assets/profile-photo.png";
 // Structured data for AI parsing
 const candidateData = {
   name: "Dror Ben-Eliyahu",
-  title: "Director, Solutions & Implementation – Core Payments, Crypto & AI",
+  title: "Director, Solutions & Implementation",
   email: "Droreli@gmail.com",
   phone: "+972-54-5441014",
   location: "Israel & EU (Work authorized)",
@@ -31,22 +31,22 @@ const candidateData = {
     { name: "Cross-functional Leadership", level: 90 },
   ],
   
-  about: "Fintech solutions and delivery leader with a RevOps foundation, spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems that deliver measurable results: ~35% faster integrations, ~45% faster first-response time, and ~25% higher launch reliability. Israel-born, Italy-trained, INSEAD MBA. Strong cross-functional operator across Commercial, Product, R&D, Support, and Risk/Compliance with international experience across five countries.",
+  about: "Fintech solutions leader driving enterprise-scale payment implementations for global merchants. RevOps foundation spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems: ~35% faster integrations, ~45% faster first-response time, ~25% higher launch reliability. Israel-born, Italy-trained, INSEAD MBA. Strong cross-functional operator across Commercial, Product, R&D, Support, and Risk/Compliance with international experience across five countries.",
   
   experience: [
     {
       company: "Nuvei",
       location: "Israel",
       description: "Global payment technology company powering digital commerce",
-      role: "Director, Solutions & Implementation – Core Payments, Crypto & AI (MCP)",
+      role: "Director, Solutions & Implementation",
       period: "Apr 2023 – Present",
       keywords: ["Payments", "Crypto", "AI", "MCP", "Enterprise"],
       achievements: [
-        "Own end-to-end solutioning and delivery for strategic merchants across core payments (cards/APMs) and crypto, from discovery to go-live and stabilization",
-        "Reduced integration cycle time by ~35% by standardizing integration artifacts (sequence diagrams, edge-case catalogs, test matrices, reconciliation checklists) and enforcing milestone-based delivery gates",
-        "Built and deployed an internal MCP-based AI agent for documentation search + guided troubleshooting, cutting first-response time by ~45% and deflecting repetitive support inquiries",
-        "Led Pay with Crypto initiatives including stablecoin enablement and remittance-adjacent flows",
-        "Established operating cadence across Product, R&D, Risk/Compliance, Support, and Commercial: weekly merchant health checks, blocker triage, escalation paths, and release readiness reviews, improving launch reliability by ~25%"
+        "Own end-to-end solutioning and delivery for strategic enterprise merchants across core payments (cards/APMs) and crypto, from discovery to go-live and stabilization",
+        "Reduced integration cycle time by ~35% for top-tier merchants by standardizing integration artifacts (sequence diagrams, edge-case catalogs, test matrices, reconciliation checklists) and enforcing milestone-based delivery gates",
+        "Built and deployed an internal AI agent for documentation search + guided troubleshooting, cutting first-response time by ~45% across the integration queue",
+        "Led Pay with Crypto initiatives including stablecoin enablement and remittance-adjacent flows for global exchanges",
+        "Established cross-functional operating cadence (Product, R&D, Risk/Compliance, Support, Commercial): weekly merchant health checks, blocker triage, escalation paths, and release readiness reviews—improving launch reliability by ~25%"
       ]
     },
     {
@@ -57,10 +57,10 @@ const candidateData = {
       period: "Mid 2021 – Apr 2023",
       keywords: ["Crypto", "Payments", "RevOps", "Forecasting", "Pipeline"],
       achievements: [
-        "Owned forecasting, KPIs, CRM/process governance, pipeline inspection, and enablement for a high-growth crypto payments business during acquisition integration",
-        "Improved forecast accuracy by ~20% and reduced pipeline slippage by ~15% by rebuilding stage definitions, inspection rituals, and accountability dashboards",
+        "Owned forecasting, KPIs, CRM governance, pipeline inspection, and enablement for a high-growth crypto payments business during acquisition integration",
+        "Improved forecast accuracy by ~20% and reduced pipeline slippage by ~15% by revamping CRM stage governance and building accountability dashboards in Salesforce",
         "Increased deal velocity by ~25% by tightening commercial-to-solutions handoffs (definition of done, SLAs, risk/compliance checkpoints) and standardizing deal review workflows",
-        "Supported strategic deals and solution packaging with Sales leadership, improving win-to-implementation conversion"
+        "Partnered with Sales leadership on strategic deals and solution packaging, improving win-to-implementation conversion rate"
       ]
     },
     {
@@ -71,9 +71,9 @@ const candidateData = {
       period: "2020 – 2021",
       keywords: ["Change Management", "Consulting", "Fortune 200", "Digital Transformation"],
       achievements: [
-        "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional units and improved adoption by ~20%",
-        "Facilitated post-merger integration and digital initiatives at a unicorn; accelerated execution through operating-model design and leadership alignment",
-        "Supported CEO-level initiatives; enabled ~30% cost reduction vs initial budgets through prioritization, governance, and execution discipline"
+        "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional business units after delivering ~20% adoption improvement",
+        "Facilitated post-merger integration at a unicorn; accelerated execution through operating-model design, reducing time-to-synergy by ~25%",
+        "Drove CEO-level strategic initiatives; enabled ~30% cost reduction vs initial budgets through prioritization, governance, and execution discipline"
       ]
     },
     {
@@ -84,8 +84,8 @@ const candidateData = {
       period: "2019",
       keywords: ["Strategy", "Post-merger Integration", "Automotive", "SaaS"],
       achievements: [
-        "Owned cross-functional strategic programs to increase agility, including hybrid org structure and post-merger integration workstreams",
-        "Reduced B2B delivery time by ~15% through new operational techniques and clearer product-to-delivery handoffs"
+        "Owned cross-functional strategic programs to increase agility, including hybrid org structure and post-merger integration workstreams across 3 acquired entities",
+        "Reduced B2B delivery time by ~15% through new operational techniques, clearer product-to-delivery handoffs, and improved client onboarding efficiency"
       ]
     },
     {
@@ -131,7 +131,7 @@ const candidateData = {
       location: "Israel",
       description: "Decentralized & autonomous global foundation leveraging open finance",
       role: "Co-Founder & VP Business Operations",
-      period: "2021 – Present",
+      period: "2021",
       keywords: ["Web3", "Blockchain", "Charity", "DAO"],
       achievements: [
         "Secured pre-seed investment ~US$100K for creating the first peace charity foundation on a blockchain",
@@ -143,7 +143,7 @@ const candidateData = {
   
   education: [
     { degree: "Master of Business Administration (MBA)", school: "INSEAD, Fontainebleau, France", period: "2018 - 2019", details: "Strategy specialization. Exchange at Wharton School of Business." },
-    { degree: "Master's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2009 - 2013", details: "Thesis: Cultural Influence on Design Process (Italian vs. Israeli design approaches)." }
+    { degree: "Bachelor's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2008 - 2012", details: "Thesis: Cultural Influence on Design Process (Italian vs. Israeli design approaches)." }
   ],
   
   languages: ["Hebrew (Native)", "English (Fluent)", "Italian (Fluent, Italy-trained)"],
