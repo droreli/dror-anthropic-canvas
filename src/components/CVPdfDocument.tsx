@@ -4,16 +4,12 @@ import {
   Text,
   View,
   StyleSheet,
-  Font,
   Link,
 } from "@react-pdf/renderer";
 import { candidateData } from "@/lib/cvData";
 
-// Use Helvetica (built-in) for reliability - no external font loading needed
-// react-pdf has built-in support for: Courier, Helvetica, Times-Roman
-
-// Accent color - warm professional tone
-const ACCENT_COLOR = "#8B7355"; // Warm brown matching Anthropic style
+// Colors matching the ideal CV screenshot
+const ACCENT_COLOR = "#8B7355"; // Warm brown for subtitles/roles
 const TEXT_COLOR = "#1a1a1a";
 const MUTED_COLOR = "#666666";
 
@@ -21,154 +17,170 @@ const styles = StyleSheet.create({
   page: {
     fontFamily: "Helvetica",
     fontSize: 9,
-    paddingTop: 30,
-    paddingBottom: 40,
-    paddingHorizontal: 35,
+    paddingTop: 28,
+    paddingBottom: 35,
+    paddingHorizontal: 40,
     color: TEXT_COLOR,
-    lineHeight: 1.4,
+    lineHeight: 1.35,
   },
-  // Header
+  
+  // Header - matching screenshot style
   header: {
-    marginBottom: 16,
-    borderBottomWidth: 2,
-    borderBottomColor: ACCENT_COLOR,
-    paddingBottom: 12,
+    marginBottom: 14,
+  },
+  nameRow: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    marginBottom: 3,
   },
   name: {
-    fontSize: 22,
-    fontWeight: 700,
-    marginBottom: 2,
+    fontSize: 24,
+    fontFamily: "Helvetica-Bold",
     color: TEXT_COLOR,
   },
-  title: {
-    fontSize: 11,
-    fontWeight: 600,
+  titleInline: {
+    fontSize: 10,
     color: ACCENT_COLOR,
-    marginBottom: 6,
+    marginBottom: 4,
   },
   contactRow: {
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: 12,
     fontSize: 8,
     color: MUTED_COLOR,
+    gap: 4,
   },
-  contactItem: {
-    flexDirection: "row",
-    alignItems: "center",
+  contactSeparator: {
+    marginHorizontal: 6,
   },
   link: {
     color: MUTED_COLOR,
     textDecoration: "none",
   },
-  // Section
+  
+  // Sections
   section: {
-    marginBottom: 12,
+    marginBottom: 10,
   },
   sectionTitle: {
     fontSize: 11,
-    fontWeight: 700,
+    fontFamily: "Helvetica-Bold",
     color: TEXT_COLOR,
-    marginBottom: 8,
-    paddingBottom: 3,
+    marginBottom: 6,
+    paddingBottom: 2,
     borderBottomWidth: 1,
-    borderBottomColor: "#e5e5e5",
+    borderBottomColor: "#cccccc",
     textTransform: "uppercase",
-    letterSpacing: 0.5,
+    letterSpacing: 0.3,
   },
-  // Summary
-  summary: {
-    fontSize: 9,
-    lineHeight: 1.5,
-    color: TEXT_COLOR,
-    marginBottom: 4,
-  },
-  // Impact Highlights
-  highlightItem: {
+  
+  // Bullets for Impact Highlights & Core Strengths
+  bulletItem: {
     flexDirection: "row",
-    marginBottom: 5,
-    paddingLeft: 8,
+    marginBottom: 4,
   },
   bullet: {
-    width: 12,
-    fontSize: 9,
-    color: ACCENT_COLOR,
+    width: 10,
+    fontSize: 8,
+    color: TEXT_COLOR,
   },
-  highlightText: {
+  bulletText: {
     flex: 1,
-    fontSize: 8.5,
-    lineHeight: 1.45,
-  },
-  // Core Strengths
-  strengthItem: {
-    flexDirection: "row",
-    marginBottom: 4,
-    paddingLeft: 8,
-  },
-  strengthText: {
-    flex: 1,
-    fontSize: 8.5,
+    fontSize: 8,
     lineHeight: 1.4,
+    color: TEXT_COLOR,
   },
-  // Experience
+  
+  // Summary paragraph
+  summaryText: {
+    fontSize: 8.5,
+    lineHeight: 1.5,
+    color: TEXT_COLOR,
+    textAlign: "justify",
+  },
+  
+  // Experience items
   experienceItem: {
-    marginBottom: 10,
+    marginBottom: 8,
   },
-  companyRow: {
+  expHeaderRow: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    marginBottom: 1,
   },
-  company: {
+  companyRole: {
     fontSize: 10,
-    fontWeight: 700,
+    fontFamily: "Helvetica-Bold",
     color: TEXT_COLOR,
+    flex: 1,
   },
-  period: {
+  periodRight: {
     fontSize: 8,
-    color: MUTED_COLOR,
+    color: TEXT_COLOR,
     textAlign: "right",
+    minWidth: 90,
   },
-  roleRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 4,
-  },
-  role: {
+  roleSubtitle: {
     fontSize: 9,
-    fontWeight: 500,
     color: ACCENT_COLOR,
+    marginBottom: 3,
   },
-  location: {
+  locationRight: {
     fontSize: 8,
-    color: MUTED_COLOR,
+    color: TEXT_COLOR,
+    textAlign: "right",
+    marginTop: -12,
   },
+  
+  // Achievement bullets (smaller)
   achievementItem: {
     flexDirection: "row",
-    marginBottom: 2.5,
-    paddingLeft: 8,
+    marginBottom: 2,
+    paddingLeft: 4,
   },
   achievementBullet: {
-    width: 10,
-    fontSize: 8,
-    color: ACCENT_COLOR,
+    width: 8,
+    fontSize: 7,
+    color: TEXT_COLOR,
   },
   achievementText: {
     flex: 1,
-    fontSize: 8,
-    lineHeight: 1.4,
-  },
-  // Education
-  educationItem: {
-    marginBottom: 6,
-  },
-  degree: {
-    fontSize: 9,
-    fontWeight: 600,
+    fontSize: 7.5,
+    lineHeight: 1.35,
     color: TEXT_COLOR,
   },
-  school: {
+  
+  // Earlier Career section header divider
+  sectionDivider: {
+    borderTopWidth: 1,
+    borderTopColor: "#cccccc",
+    paddingTop: 8,
+    marginTop: 4,
+  },
+  
+  // Two column for Education/Languages
+  twoColumn: {
+    flexDirection: "row",
+    marginTop: 6,
+  },
+  leftCol: {
+    flex: 1,
+    paddingRight: 20,
+  },
+  rightCol: {
+    width: 150,
+  },
+  
+  // Education
+  eduItem: {
+    marginBottom: 8,
+  },
+  eduDegree: {
+    fontSize: 9,
+    fontFamily: "Helvetica-Bold",
+    color: TEXT_COLOR,
+  },
+  eduSchool: {
     fontSize: 8,
     color: MUTED_COLOR,
   },
@@ -177,47 +189,31 @@ const styles = StyleSheet.create({
     color: MUTED_COLOR,
     marginTop: 1,
   },
-  // Two column layout
-  twoColumn: {
-    flexDirection: "row",
-    gap: 20,
-  },
-  leftColumn: {
-    flex: 1,
-  },
-  rightColumn: {
-    width: 140,
-  },
+  
   // Languages & Military
-  listItem: {
+  langItem: {
     fontSize: 8,
     marginBottom: 2,
     color: TEXT_COLOR,
   },
+  
   // Page number
   pageNumber: {
     position: "absolute",
     fontSize: 7,
-    bottom: 20,
-    right: 35,
+    bottom: 18,
+    right: 40,
     color: MUTED_COLOR,
   },
 });
 
-// Helper to render bullet points
-const BulletPoint = ({ children, style }: { children: React.ReactNode; style?: object }) => (
-  <View style={[styles.highlightItem, style]}>
-    <Text style={styles.bullet}>•</Text>
-    <Text style={styles.highlightText}>{children}</Text>
-  </View>
-);
-
 const CVPdfDocument = () => {
   const data = candidateData;
   
-  // Split experience into main roles and earlier career
-  const mainExperience = data.experience.slice(0, 4); // Nuvei, Simplex, Vayomar, MotorK
-  const earlierCareer = data.experience.slice(4); // Rest
+  // Main experience: Nuvei, Simplex
+  // Earlier career: Everything else
+  const mainExperience = data.experience.slice(0, 2); // Nuvei, Simplex
+  const earlierCareer = data.experience.slice(2); // Vayomar, MotorK, Appslix, WoOdie, Hisense, DAO4Peace
   
   return (
     <Document
@@ -227,29 +223,19 @@ const CVPdfDocument = () => {
       keywords={data.hiddenKeywords.join(", ")}
     >
       <Page size="A4" style={styles.page}>
-        {/* Header */}
+        {/* Header - Name + Title inline */}
         <View style={styles.header}>
-          <Text style={styles.name}>{data.name}</Text>
-          <Text style={styles.title}>{data.title}</Text>
-          <View style={styles.contactRow}>
-            <View style={styles.contactItem}>
-              <Link src={`mailto:${data.email}`} style={styles.link}>
-                {data.email}
-              </Link>
-            </View>
-            <Text>|</Text>
-            <View style={styles.contactItem}>
-              <Link src={`tel:${data.phone}`} style={styles.link}>
-                {data.phone}
-              </Link>
-            </View>
-            <Text>|</Text>
-            <View style={styles.contactItem}>
-              <Link src={`https://${data.linkedin}`} style={styles.link}>
-                LinkedIn: {data.linkedin}
-              </Link>
-            </View>
-            <Text>|</Text>
+          <View style={styles.nameRow}>
+            <Text style={styles.name}>{data.name}</Text>
+          </View>
+          <Text style={styles.titleInline}>{data.title}</Text>
+          <View style={[styles.contactRow, { marginTop: 4 }]}>
+            <Link src={`mailto:${data.email}`} style={styles.link}>{data.email}</Link>
+            <Text style={styles.contactSeparator}>|</Text>
+            <Link src={`tel:${data.phone}`} style={styles.link}>{data.phone}</Link>
+            <Text style={styles.contactSeparator}>|</Text>
+            <Text>LinkedIn: {data.linkedin}</Text>
+            <Text style={styles.contactSeparator}>|</Text>
             <Text>{data.location}</Text>
           </View>
         </View>
@@ -257,24 +243,27 @@ const CVPdfDocument = () => {
         {/* Impact Highlights */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Impact Highlights</Text>
-          {data.impactHighlights.map((highlight, i) => (
-            <BulletPoint key={i}>{highlight}</BulletPoint>
+          {data.impactHighlights.map((item, i) => (
+            <View key={i} style={styles.bulletItem}>
+              <Text style={styles.bullet}>•</Text>
+              <Text style={styles.bulletText}>{item}</Text>
+            </View>
           ))}
         </View>
 
         {/* Summary */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Summary</Text>
-          <Text style={styles.summary}>{data.about}</Text>
+          <Text style={styles.summaryText}>{data.about}</Text>
         </View>
 
         {/* Core Strengths */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Core Strengths</Text>
-          {data.coreStrengths.map((strength, i) => (
-            <View key={i} style={styles.strengthItem}>
+          {data.coreStrengths.map((item, i) => (
+            <View key={i} style={styles.bulletItem}>
               <Text style={styles.bullet}>•</Text>
-              <Text style={styles.strengthText}>{strength}</Text>
+              <Text style={styles.bulletText}>{item}</Text>
             </View>
           ))}
         </View>
@@ -282,97 +271,94 @@ const CVPdfDocument = () => {
         {/* Experience */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Experience</Text>
+          
           {mainExperience.map((exp, i) => (
             <View key={i} style={styles.experienceItem} wrap={false}>
-              <View style={styles.companyRow}>
-                <Text style={styles.company}>
-                  {exp.company}
-                  {exp.company === "Simplex (acquired by Nuvei)" ? "" : ` - ${exp.role}`}
+              {/* Company - Role + Period */}
+              <View style={styles.expHeaderRow}>
+                <Text style={styles.companyRole}>
+                  {exp.company} - {exp.role}
                 </Text>
-                <Text style={styles.period}>{exp.period}</Text>
+                <Text style={styles.periodRight}>{exp.period}</Text>
               </View>
-              {exp.company === "Simplex (acquired by Nuvei)" && (
-                <View style={styles.roleRow}>
-                  <Text style={styles.role}>{exp.role}</Text>
-                </View>
-              )}
-              <View style={styles.roleRow}>
-                <Text style={styles.role}>{exp.company !== "Simplex (acquired by Nuvei)" ? "" : ""}</Text>
-                <Text style={styles.location}>{exp.location}</Text>
+              {/* Subtitle/Description + Location */}
+              <View style={styles.expHeaderRow}>
+                <Text style={styles.roleSubtitle}>{exp.description}</Text>
+                <Text style={styles.locationRight}>{exp.location}</Text>
               </View>
-              {exp.achievements.map((achievement, j) => (
+              {/* Achievements */}
+              {exp.achievements.map((ach, j) => (
                 <View key={j} style={styles.achievementItem}>
                   <Text style={styles.achievementBullet}>•</Text>
-                  <Text style={styles.achievementText}>{achievement}</Text>
+                  <Text style={styles.achievementText}>{ach}</Text>
                 </View>
               ))}
             </View>
           ))}
         </View>
 
-        {/* Page number */}
         <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`} fixed />
       </Page>
 
       {/* Page 2 - Earlier Career + Education */}
       <Page size="A4" style={styles.page}>
+        
         {/* Earlier Career */}
-        <View style={styles.section}>
+        <View style={[styles.section, styles.sectionDivider]}>
           <Text style={styles.sectionTitle}>Earlier Career</Text>
+          
           {earlierCareer.map((exp, i) => (
             <View key={i} style={styles.experienceItem} wrap={false}>
-              <View style={styles.companyRow}>
-                <Text style={styles.company}>{exp.company} - {exp.role}</Text>
-                <Text style={styles.period}>{exp.period}</Text>
+              <View style={styles.expHeaderRow}>
+                <Text style={styles.companyRole}>
+                  {exp.company} - {exp.role}
+                </Text>
+                <Text style={styles.periodRight}>{exp.period}</Text>
               </View>
-              <View style={styles.roleRow}>
-                <Text style={styles.role}>{exp.description}</Text>
-                <Text style={styles.location}>{exp.location}</Text>
+              <View style={styles.expHeaderRow}>
+                <Text style={styles.roleSubtitle}>{exp.description}</Text>
+                <Text style={styles.locationRight}>{exp.location}</Text>
               </View>
-              {exp.achievements.map((achievement, j) => (
+              {exp.achievements.map((ach, j) => (
                 <View key={j} style={styles.achievementItem}>
                   <Text style={styles.achievementBullet}>•</Text>
-                  <Text style={styles.achievementText}>{achievement}</Text>
+                  <Text style={styles.achievementText}>{ach}</Text>
                 </View>
               ))}
             </View>
           ))}
         </View>
 
-        {/* Two column layout for Education, Languages, Military */}
+        {/* Two Column: Education | Languages + Military */}
         <View style={styles.twoColumn}>
-          <View style={styles.leftColumn}>
-            {/* Education */}
+          <View style={styles.leftCol}>
             <View style={styles.section}>
               <Text style={styles.sectionTitle}>Education</Text>
               {data.education.map((edu, i) => (
-                <View key={i} style={styles.educationItem}>
-                  <Text style={styles.degree}>{edu.degree}</Text>
-                  <Text style={styles.school}>{edu.school} | {edu.period}</Text>
+                <View key={i} style={styles.eduItem}>
+                  <Text style={styles.eduDegree}>{edu.degree}</Text>
+                  <Text style={styles.eduSchool}>{edu.school} | {edu.period}</Text>
                   <Text style={styles.eduDetails}>{edu.details}</Text>
                 </View>
               ))}
             </View>
           </View>
-
-          <View style={styles.rightColumn}>
-            {/* Languages */}
+          
+          <View style={styles.rightCol}>
             <View style={styles.section}>
               <Text style={styles.sectionTitle}>Languages</Text>
               {data.languages.map((lang, i) => (
-                <Text key={i} style={styles.listItem}>• {lang}</Text>
+                <Text key={i} style={styles.langItem}>• {lang}</Text>
               ))}
             </View>
-
-            {/* Military */}
+            
             <View style={styles.section}>
               <Text style={styles.sectionTitle}>Military Service</Text>
-              <Text style={styles.listItem}>{data.military}</Text>
+              <Text style={styles.langItem}>{data.military}</Text>
             </View>
           </View>
         </View>
 
-        {/* Page number */}
         <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`} fixed />
       </Page>
     </Document>
