@@ -27,17 +27,18 @@ const styles = StyleSheet.create({
   // Header
   header: {
     marginBottom: 12,
+    flexDirection: "column",
   },
   name: {
     fontSize: 26,
     fontFamily: "Helvetica-Bold",
     color: TEXT_COLOR,
-    marginBottom: 4,
+    marginBottom: 2,
   },
   title: {
     fontSize: 10,
     color: ACCENT_COLOR,
-    marginBottom: 5,
+    marginBottom: 6,
   },
   contactRow: {
     flexDirection: "row",
