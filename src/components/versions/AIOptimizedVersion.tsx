@@ -7,21 +7,12 @@ import {
 import profilePhoto from "@/assets/profile-photo.png";
 import { websiteData as candidateData } from "@/lib/cvData";
 
-const SkillBar = ({ skill }: { skill: { name: string; level: number } }) => (
-  <div className="space-y-1">
-    <div className="flex justify-between text-sm">
-      <span className="font-medium">{skill.name}</span>
-      <span className="text-primary font-mono">{skill.level}%</span>
-    </div>
-    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: `${skill.level}%` }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
-      />
-    </div>
+const SkillBar = ({ skill }: { skill: { name: string; level: string } }) => (
+  <div className="flex items-center justify-between text-sm">
+    <span className="font-medium">{skill.name}</span>
+    <span className="text-xs px-2 py-0.5 rounded bg-primary/10 text-primary">
+      {skill.level}
+    </span>
   </div>
 );
 
@@ -42,6 +33,9 @@ const AIOptimizedVersion = () => {
                 src={profilePhoto}
                 alt={candidateData.name}
                 className="w-24 h-24 rounded-xl object-cover border-2 border-border shadow-lg"
+                width={96}
+                height={96}
+                decoding="async"
                 style={{ objectPosition: 'center 20%' }}
               />
               <div>
@@ -237,8 +231,8 @@ const AIOptimizedVersion = () => {
             workExperience: candidateData.experience.map(e => ({
               "@type": "OrganizationRole",
               roleName: e.role,
-              startDate: e.period.split(" – ")[0],
-              endDate: e.period.split(" – ")[1] || "Present",
+              startDate: e.isoStart,
+              ...(e.isoEnd ? { endDate: e.isoEnd } : {}),
               worksFor: { "@type": "Organization", name: e.company }
             }))
           })

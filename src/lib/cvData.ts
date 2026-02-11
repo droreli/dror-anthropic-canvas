@@ -6,6 +6,8 @@ export interface Experience {
   description: string;
   role: string;
   period: string;
+  isoStart: string;
+  isoEnd: string | null;
   keywords: string[];
   achievements: string[];
 }
@@ -14,12 +16,14 @@ export interface Education {
   degree: string;
   school: string;
   period: string;
+  isoStart: string;
+  isoEnd: string;
   details: string;
 }
 
 export interface Skill {
   name: string;
-  level: number;
+  level: "Expert" | "Advanced" | "Proficient" | "Working";
 }
 
 export interface CandidateData {
@@ -58,28 +62,28 @@ export const candidateData: CandidateData = {
   ],
   
   topSkills: [
-    { name: "Crypto/Web3 Integration", level: 95 },
-    { name: "Payment Infrastructure", level: 90 },
-    { name: "AI & Intelligent Automation", level: 80 },
-    { name: "Enterprise Payment Solutions", level: 90 },
-    { name: "Cross-functional Leadership", level: 90 },
+    { name: "Crypto/Web3 Integration", level: "Advanced" },
+    { name: "Payment Infrastructure", level: "Expert" },
+    { name: "AI & Intelligent Automation", level: "Proficient" },
+    { name: "Enterprise Payment Solutions", level: "Expert" },
+    { name: "Cross-functional Leadership", level: "Expert" },
   ],
   
-  about: "Fintech solutions and delivery leader with a RevOps foundation, spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems: integration standards, operating cadences, escalation paths, and automation that reduces cycle time and improves launch reliability. Strong cross-functional operator across Product, R&D;, Risk/Compliance, Support, and Commercial.",
+  about: "Fintech solutions and delivery leader with a RevOps foundation, spanning core payments, crypto, and AI-driven enablement. Known for turning ambiguity into repeatable systems: integration standards, operating cadences, escalation paths, and automation that reduces cycle time and improves launch reliability. Strong cross-functional operator across Product, R&D, Risk/Compliance, Support, and Commercial.",
   
   // Impact highlights for PDF (quantified achievements)
   impactHighlights: [
-    "Reduced average merchant integration cycle time by [X%] (from [A] to [B] weeks) by productizing integration playbooks and deploying an internal MCP-based AI agent for documentation search, guided troubleshooting, and faster handoffs.",
-    "Improved go-live success rate to [X%] and reduced post-go-live escalation volume by [Y%] through standardized readiness gates (risk/compliance, test plans, reconciliation checks) and tighter cross-functional operating cadence.",
-    "Accelerated time-to-answer for internal teams from [A] minutes to [B] minutes (■[X%]) by creating a documentation quality loop (broken-link detection, content ownership, feedback triage) and an AI search layer over the knowledge base.",
-    "Enabled Pay with Crypto initiatives (on■ramp/off■ramp + stablecoin rails) for strategic merchants, contributing [X] new launches and [Y] expansion milestones across [regions].",
-    "In Sales Ops at Simplex, increased pipeline hygiene and forecast accuracy by [X%] and improved conversion from signed deal to implementation start by [Y%] by rebuilding stage definitions, SLAs, and handoff workflows."
+    "Reduced average merchant integration cycle time by productizing integration playbooks and deploying an internal MCP-based AI agent for documentation search, guided troubleshooting, and faster handoffs.",
+    "Improved go-live success rate and reduced post-go-live escalation volume through standardized readiness gates (risk/compliance, test plans, reconciliation checks) and tighter cross-functional operating cadence.",
+    "Accelerated time-to-answer for internal teams by creating a documentation quality loop (broken-link detection, content ownership, feedback triage) and an AI search layer over the knowledge base.",
+    "Enabled Pay with Crypto initiatives (on-ramp/off-ramp + stablecoin rails) for strategic merchants, contributing to new launches and expansion milestones across regions.",
+    "In Sales Ops at Simplex, increased pipeline hygiene and forecast accuracy and improved conversion from signed deal to implementation start by rebuilding stage definitions, SLAs, and handoff workflows."
   ],
   
   // Core strengths for PDF
   coreStrengths: [
     "Payments integration leadership: checkout, tokenization, 3DS, routing, refunds/voids, settlement, reconciliation",
-    "Crypto rails: on■ramp/off■ramp flows, stablecoins, KYC/AML alignment, partner coordination, operational readiness",
+    "Crypto rails: on-ramp/off-ramp flows, stablecoins, KYC/AML alignment, partner coordination, operational readiness",
     "AI & knowledge systems: MCP/RAG search, documentation hygiene loops, integration tooling and automation",
     "Program delivery: stakeholder mapping, RACI, risk management, release readiness, incident triage & postmortems",
     "RevOps / Sales Ops: forecasting, pipeline governance, coverage planning, enablement, deal execution support"
@@ -92,13 +96,15 @@ export const candidateData: CandidateData = {
       description: "Global payment technology company powering digital commerce",
       role: "Director, Solutions & Implementation - Core Payments, Crypto & AI (MCP)",
       period: "Apr 2023 – Present",
+      isoStart: "2023-04",
+      isoEnd: null,
       keywords: ["Payments", "Crypto", "AI", "MCP", "Enterprise"],
       achievements: [
-        "Own end-to-end solutioning and delivery for strategic merchants across core payments (cards/APMs) and crypto, from discovery to go-live and stabilization, covering [X] accounts / [Y] regions / [TPV band].",
-        "Reduced integration cycle time by [X%] by standardizing integration artifacts (sequence diagrams, edge-case catalogs, test matrices, reconciliation checklists) and enforcing milestone-based delivery gates.",
-        "Built and deployed an internal MCP-based AI agent for documentation search + guided troubleshooting, cutting first-response time on integration questions by [X%] and deflecting [Y%] of repetitive support inquiries.",
-        "Led Pay with Crypto initiatives including stablecoin enablement and remittance-adjacent flows (where applicable), driving [X] launches and improving operational readiness (KYC/AML, risk review, reporting) by [Y%].",
-        "Established operating cadence across Product, R&D;, Risk/Compliance, Support, and Commercial: weekly merchant health checks, blocker triage, escalation paths, and release readiness reviews, reducing critical escalations by [X%]."
+        "Own end-to-end solutioning and delivery for strategic merchants across core payments (cards/APMs) and crypto, from discovery to go-live and stabilization across multiple accounts and regions.",
+        "Reduced integration cycle time by standardizing integration artifacts (sequence diagrams, edge-case catalogs, test matrices, reconciliation checklists) and enforcing milestone-based delivery gates.",
+        "Built and deployed an internal MCP-based AI agent for documentation search + guided troubleshooting, improving first-response time on integration questions and deflecting repetitive support inquiries.",
+        "Led Pay with Crypto initiatives including stablecoin enablement and remittance-adjacent flows (where applicable), driving launches and improving operational readiness (KYC/AML, risk review, reporting).",
+        "Established operating cadence across Product, R&D, Risk/Compliance, Support, and Commercial: weekly merchant health checks, blocker triage, escalation paths, and release readiness reviews."
       ]
     },
     {
@@ -107,6 +113,8 @@ export const candidateData: CandidateData = {
       description: "Fiat-to-crypto payment infrastructure for exchanges and wallets",
       role: "Head of Sales Operations",
       period: "Mid 2021 – Apr 2023",
+      isoStart: "2021-06",
+      isoEnd: "2023-04",
       keywords: ["Crypto", "Payments", "RevOps", "Forecasting", "Pipeline"],
       achievements: [
         "Owned forecasting, KPIs, CRM governance, pipeline inspection, and enablement for a high-growth crypto payments business during acquisition integration",
@@ -121,6 +129,8 @@ export const candidateData: CandidateData = {
       description: "Boutique consultancy specializing in change management and innovation",
       role: "Senior Consultant – Change Management & Innovation",
       period: "2020 – 2021",
+      isoStart: "2020-01",
+      isoEnd: "2021-12",
       keywords: ["Change Management", "Consulting", "Fortune 200", "Digital Transformation"],
       achievements: [
         "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional business units after delivering ~20% adoption improvement",
@@ -134,6 +144,8 @@ export const candidateData: CandidateData = {
       description: "Integrated, end-to-end solutions for the automotive industry",
       role: "Senior Strategy Manager",
       period: "2019",
+      isoStart: "2019-01",
+      isoEnd: "2019-12",
       keywords: ["Strategy", "Post-merger Integration", "Automotive", "SaaS"],
       achievements: [
         "Owned cross-functional strategic programs to increase agility, including hybrid org structure and post-merger integration workstreams across 3 acquired entities",
@@ -146,6 +158,8 @@ export const candidateData: CandidateData = {
       description: "Global media company",
       role: "Co-Founder, Head of Business Development",
       period: "2016 – 2018",
+      isoStart: "2016-01",
+      isoEnd: "2018-12",
       keywords: ["Startup", "Business Development", "Performance Marketing", "Growth"],
       achievements: [
         "Drove ~400% revenue growth in one year (~US$600K in 2017) via strategic performance marketing partnerships and experimentation discipline",
@@ -158,6 +172,8 @@ export const candidateData: CandidateData = {
       description: "Eco-sustainable sunglasses company",
       role: "Co-Founder & CEO",
       period: "2014 – 2017",
+      isoStart: "2014-01",
+      isoEnd: "2017-12",
       keywords: ["E-commerce", "Startup", "CEO", "Fundraising"],
       achievements: [
         "Raised ~US$150K angel investment through compelling pitch",
@@ -171,6 +187,8 @@ export const candidateData: CandidateData = {
       description: "Chinese multinational electronics manufacturer",
       role: "Product Design & Senior Product Designer",
       period: "2012 – 2014",
+      isoStart: "2012-01",
+      isoEnd: "2014-12",
       keywords: ["Product Design", "Consumer Electronics", "Enterprise Partnerships"],
       achievements: [
         "Developed corporate design strategy for US market",
@@ -184,6 +202,8 @@ export const candidateData: CandidateData = {
       description: "Decentralized & autonomous global foundation leveraging open finance",
       role: "Co-Founder & VP Business Operations",
       period: "2021",
+      isoStart: "2021-01",
+      isoEnd: "2021-12",
       keywords: ["Web3", "Blockchain", "Charity", "DAO"],
       achievements: [
         "Secured pre-seed investment ~US$100K for creating the first peace charity foundation on a blockchain",
@@ -194,8 +214,8 @@ export const candidateData: CandidateData = {
   ],
   
   education: [
-    { degree: "Master of Business Administration (MBA)", school: "INSEAD, Fontainebleau, France", period: "2018 - 2019", details: "Strategy specialization. Exchange at Wharton School of Business." },
-    { degree: "Bachelor's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2008 - 2012", details: "Thesis: Cultural Influence on Design Process (Italian vs. Israeli design approaches)." }
+    { degree: "Master of Business Administration (MBA)", school: "INSEAD, Fontainebleau, France", period: "2018 - 2019", isoStart: "2018-01", isoEnd: "2019-12", details: "Strategy specialization. Exchange at Wharton School of Business." },
+    { degree: "Bachelor's in Industrial Design", school: "Università degli Studi di Firenze, Florence, Italy", period: "2008 - 2012", isoStart: "2008-01", isoEnd: "2012-12", details: "Thesis: Cultural Influence on Design Process (Italian vs. Israeli design approaches)." }
   ],
   
   languages: ["Hebrew (Native)", "English (Fluent)", "Italian (Fluent, Italy-trained)"],
@@ -215,6 +235,8 @@ export const websiteData: CandidateData = {
       description: "Global payment technology company powering digital commerce",
       role: "Director, Solutions & Implementation",
       period: "Apr 2023 – Present",
+      isoStart: "2023-04",
+      isoEnd: null,
       keywords: ["Payments", "Crypto", "AI", "MCP", "Enterprise"],
       achievements: [
         "Own end-to-end solutioning and delivery for strategic enterprise merchants across core payments (cards/APMs) and crypto, from discovery to go-live and stabilization",
@@ -230,6 +252,8 @@ export const websiteData: CandidateData = {
       description: "Fiat-to-crypto payment infrastructure for exchanges and wallets",
       role: "Head of Sales Operations",
       period: "Mid 2021 – Apr 2023",
+      isoStart: "2021-06",
+      isoEnd: "2023-04",
       keywords: ["Crypto", "Payments", "RevOps", "Forecasting", "Pipeline"],
       achievements: [
         "Owned forecasting, KPIs, CRM governance, pipeline inspection, and enablement for a high-growth crypto payments business during acquisition integration",
@@ -244,6 +268,8 @@ export const websiteData: CandidateData = {
       description: "Boutique consultancy specializing in change management and innovation",
       role: "Senior Consultant – Change Management & Innovation",
       period: "2020 – 2021",
+      isoStart: "2020-01",
+      isoEnd: "2021-12",
       keywords: ["Change Management", "Consulting", "Fortune 200", "Digital Transformation"],
       achievements: [
         "Led change management strategy for a Fortune 200 account across four continents; expanded scope to two additional business units after delivering ~20% adoption improvement",
@@ -257,6 +283,8 @@ export const websiteData: CandidateData = {
       description: "Integrated, end-to-end solutions for the automotive industry",
       role: "Senior Strategy Manager",
       period: "2019",
+      isoStart: "2019-01",
+      isoEnd: "2019-12",
       keywords: ["Strategy", "Post-merger Integration", "Automotive", "SaaS"],
       achievements: [
         "Owned cross-functional strategic programs to increase agility, including hybrid org structure and post-merger integration workstreams across 3 acquired entities",
@@ -269,6 +297,8 @@ export const websiteData: CandidateData = {
       description: "Global media company",
       role: "Co-Founder, Head of Business Development",
       period: "2016 – 2018",
+      isoStart: "2016-01",
+      isoEnd: "2018-12",
       keywords: ["Startup", "Business Development", "Performance Marketing", "Growth"],
       achievements: [
         "Drove ~400% revenue growth in one year (~US$600K in 2017) via strategic performance marketing partnerships and experimentation discipline",
@@ -281,6 +311,8 @@ export const websiteData: CandidateData = {
       description: "Eco-sustainable sunglasses company",
       role: "Co-Founder & CEO",
       period: "2014 – 2017",
+      isoStart: "2014-01",
+      isoEnd: "2017-12",
       keywords: ["E-commerce", "Startup", "CEO", "Fundraising"],
       achievements: [
         "Raised ~US$150K angel investment through compelling pitch",
@@ -294,6 +326,8 @@ export const websiteData: CandidateData = {
       description: "Chinese multinational electronics manufacturer",
       role: "Product Design & Senior Product Designer",
       period: "2012 – 2014",
+      isoStart: "2012-01",
+      isoEnd: "2014-12",
       keywords: ["Product Design", "Consumer Electronics", "Enterprise Partnerships"],
       achievements: [
         "Developed corporate design strategy for US market",
@@ -307,6 +341,8 @@ export const websiteData: CandidateData = {
       description: "Decentralized & autonomous global foundation leveraging open finance",
       role: "Co-Founder & VP Business Operations",
       period: "2021",
+      isoStart: "2021-01",
+      isoEnd: "2021-12",
       keywords: ["Web3", "Blockchain", "Charity", "DAO"],
       achievements: [
         "Secured pre-seed investment ~US$100K for creating the first peace charity foundation on a blockchain",

@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Download, Sun, Moon, Loader2 } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { pdf } from "@react-pdf/renderer";
-import CVPdfDocument from "@/components/CVPdfDocument";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [isGenerating, setIsGenerating] = useState(false);
-
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -23,25 +19,6 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleDownloadCV = async () => {
-    setIsGenerating(true);
-    try {
-      const blob = await pdf(<CVPdfDocument />).toBlob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "Dror_Ben-Eliyahu_CV.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Error generating PDF:", error);
-    } finally {
-      setIsGenerating(false);
-    }
-  };
 
   return (
     <motion.header
