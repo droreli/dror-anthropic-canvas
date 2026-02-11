@@ -87,8 +87,8 @@ const Header = () => {
               </Button>
             )}
 
-            {/* Download CV */}
-            <Button
+            {/* Download CV - Temporarily disabled */}
+            {/* <Button
               variant="default"
               size="sm"
               className="gap-2"
@@ -103,7 +103,7 @@ const Header = () => {
               <span className="hidden sm:inline">
                 {isGenerating ? "Generating..." : "Download CV"}
               </span>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
