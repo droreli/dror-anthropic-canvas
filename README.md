@@ -1,16 +1,18 @@
 # Dror Ben-Eliyahu - Professional CV
 
-A modern, responsive CV website built with React, TypeScript, and Tailwind CSS. Features two distinct versions: a classic multi-section layout and an AI-optimized single-page version with structured data for automated parsing.
+A modern, responsive CV website built with React, TypeScript, and Tailwind CSS. Features a single AI-optimized layout with structured data for automated parsing.
+
+🌐 **Live Site**: [https://droreli.github.io/dror-anthropic-canvas/](https://droreli.github.io/dror-anthropic-canvas/)
 
 ## 🚀 Features
 
-- **Dual Versions**: Switch between Classic and AI-Ready versions
+- **AI-Optimized Layout**: Single-page design with structured data for AI recruitment tools
 - **Responsive Design**: Optimized for all devices
 - **Dark/Light Theme**: Automatic theme switching
-- **AI-Optimized**: Structured data and keywords for AI recruitment tools
 - **Modern UI**: Built with shadcn/ui components and Framer Motion animations
 - **TypeScript**: Full type safety
 - **Fast**: Built with Vite for optimal performance
+- **PDF Generation**: Dynamic CV export (currently in development)
 
 ## 🛠️ Tech Stack
 
@@ -19,29 +21,25 @@ A modern, responsive CV website built with React, TypeScript, and Tailwind CSS. 
 - **Styling**: Tailwind CSS, shadcn/ui
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **State Management**: React Query
+- **PDF**: @react-pdf/renderer
 - **Routing**: React Router
+- **Deployment**: GitHub Pages
 
-## 📋 Versions
 
-### Classic Version
-Traditional CV layout with separate sections:
-- Hero with profile photo
-- About section
-- Core strengths
-- Professional experience
-- Education
-- Military service
-- Skills
-- Contact footer
+## 📋 CV Structure
 
-### AI-Ready Version
-Single-page layout optimized for AI parsing:
-- Structured JSON-LD schema
-- Keyword optimization
-- Machine-readable experience data
-- Skill proficiency levels
-- Downloadable CV link
+The CV features a single-page AI-optimized layout with:
+- **Header**: Name, title, contact information
+- **Impact Highlights**: Quantified achievements across career
+- **Summary**: Professional overview and expertise areas
+- **Core Strengths**: Technical and leadership capabilities
+- **Experience**: Detailed role descriptions with achievements
+  - Current: Nuvei (Director, Solutions & Implementation)
+  - Recent: Simplex, Vayomar, MotorK
+  - Earlier Career: Startups and product design roles
+- **Education**: MBA from INSEAD, Bachelor's in Industrial Design
+- **Languages**: Hebrew, English, Italian
+- **Military Service**: Israeli Air Force
 
 ## 🏃‍♂️ Running Locally
 
@@ -53,8 +51,8 @@ Single-page layout optimized for AI parsing:
 
 1. Clone the repository:
 ```bash
-git clone <YOUR_GIT_URL>
-cd <YOUR_PROJECT_NAME>
+git clone https://github.com/droreli/dror-anthropic-canvas.git
+cd dror-anthropic-canvas
 ```
 
 2. Install dependencies:
@@ -81,56 +79,54 @@ npm run preview
 ```
 src/
 ├── components/
-│   ├── ui/           # shadcn/ui components
-│   ├── versions/     # CV version components
-│   ├── Header.tsx
-│   ├── VersionSwitcher.tsx
-│   └── ...           # Individual section components
+│   ├── ui/                  # shadcn/ui components
+│   ├── versions/
+│   │   └── AIOptimizedVersion.tsx  # Main CV layout
+│   ├── CVPdfDocument.tsx   # PDF generation component
+│   ├── Header.tsx          # Site header with theme toggle
+│   └── ...                 # Individual section components
+├── lib/
+│   ├── cvData.ts          # CV data (shared between web & PDF)
+│   └── utils.ts
 ├── pages/
 │   ├── Index.tsx
 │   └── NotFound.tsx
-├── hooks/
-├── lib/
 └── assets/
 ```
 
 ## 🎨 Customization
 
-### Adding New Sections
-1. Create a new component in `src/components/`
-2. Add it to both `ClassicVersion.tsx` and `AIOptimizedVersion.tsx`
-3. Update the data structure in `AIOptimizedVersion.tsx` if needed
-
 ### Modifying Content
-- Update personal information in component files
-- Modify `candidateData` object in `AIOptimizedVersion.tsx`
-- Update individual components for the Classic version
+- Update CV data in `src/lib/cvData.ts`:
+  - `candidateData`: Used for PDF generation (with placeholders)
+  - `websiteData`: Used for website display (with actual metrics)
+- Modify layout in `src/components/versions/AIOptimizedVersion.tsx`
+- Update PDF styling in `src/components/CVPdfDocument.tsx`
 
 ### Styling
 - Global styles in `src/index.css`
 - Component-specific styles using Tailwind classes
 - Theme configuration in `tailwind.config.ts`
+- PDF styles in `CVPdfDocument.tsx` StyleSheet
 
 ## 🚀 Deployment
 
-### GitHub Pages
-1. Build the project: `npm run build`
-2. Deploy to GitHub Pages using GitHub Actions or manually
+### GitHub Pages (Current)
+Deployed automatically via `gh-pages` package:
+```bash
+npm run build
+npx gh-pages -d dist -f
+```
+
+Live at: [https://droreli.github.io/dror-anthropic-canvas/](https://droreli.github.io/dror-anthropic-canvas/)
 
 ### Other Platforms
 The built files in `dist/` can be deployed to:
 - Vercel
 - Netlify
+- Cloudflare Pages
 - AWS S3 + CloudFront
 - Any static hosting service
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test locally
-5. Submit a pull request
 
 ## 📄 License
 
@@ -138,30 +134,10 @@ This project is private and proprietary.
 
 ## 📞 Contact
 
-Dror Ben-Eliyahu
+**Dror Ben-Eliyahu**
 - Email: Droreli@gmail.com
 - Phone: +972-54-5441014
-- Location: Israel & EU (Work authorized)
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- LinkedIn: [linkedin.com/in/dror-ben-eliyahu](https://linkedin.com/in/dror-ben-eliyahu)
+- Location: Ra'anana / Tel Aviv, Israel
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
